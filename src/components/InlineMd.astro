@@ -1,0 +1,10 @@
+---
+import { renderInline } from '../lib/markdown';
+
+// Titulos y textos cortos con Markdown inline (por ejemplo `codigo`).
+type Props = { texto: string };
+
+const html = await renderInline(Astro.props.texto);
+---
+
+<span set:html={html} />
