@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /RSC/
+Allow: /
+
+Sitemap: https://arduino-roadmap.example/sitemap-index.xml
