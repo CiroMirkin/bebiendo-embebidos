@@ -1,4 +1,4 @@
-import { parse as parseYaml } from 'yaml';
+import { getCollection } from 'astro:content';
 
 export type QuizOption = {
   text: string;
@@ -13,7 +13,6 @@ export type Quiz = {
 
 type Level = 'ESTUDIAR' | 'CONOCER';
 
-// Una lección por concepto: un .md en ./conceptos, con el quiz en el frontmatter.
 export type Concept = {
   id: string;
   slug: string;
@@ -21,59 +20,41 @@ export type Concept = {
   title: string;
   level: Level;
   relacionado?: string;
+  descripcion?: string;
   quizzes: Quiz[];
   cuerpo: string;
 };
 
-type Frontmatter = {
-  id: string;
-  parte: string;
-  titulo: string;
-  nivel: Level;
-  relacionado?: string;
-  quiz?: Quiz[];
-};
-
-const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
-
-const desdeMarkdown = (ruta: string, contenido: string): Concept => {
-  const slug = ruta.replace(/^.*\//, '').replace(/\.md$/, '');
-  const partes = FRONTMATTER.exec(contenido);
-  if (!partes) throw new Error(`${ruta}: falta el frontmatter`);
-  const fm = parseYaml(partes[1] ?? '') as Frontmatter;
-  for (const campo of ['id', 'parte', 'titulo', 'nivel'] as const) {
-    if (!fm[campo]) throw new Error(`${ruta}: falta "${campo}" en el frontmatter`);
-  }
-  return {
-    id: fm.id,
+const cargar = async (): Promise<Concept[]> => {
+  const entradas = await getCollection('conceptos');
+  const concepts = entradas.map(({ id: slug, data, body }): Concept => ({
+    id: data.id,
     slug,
-    partSlug: fm.parte,
-    title: fm.titulo,
-    level: fm.nivel,
-    ...(fm.relacionado ? { relacionado: fm.relacionado } : {}),
-    quizzes: fm.quiz ?? [],
-    cuerpo: partes[2] ?? '',
-  };
+    partSlug: data.parte,
+    title: data.titulo,
+    level: data.nivel,
+    ...(data.relacionado ? { relacionado: data.relacionado } : {}),
+    ...(data.descripcion ? { descripcion: data.descripcion } : {}),
+    quizzes: data.quiz,
+    cuerpo: body ?? '',
+  }));
+  const slugs = new Set(concepts.map((c) => c.slug));
+  for (const c of concepts) {
+    if (c.relacionado && !slugs.has(c.relacionado)) {
+      throw new Error(`${c.slug}.md: "relacionado" apunta a "${c.relacionado}", que no existe`);
+    }
+  }
+  return concepts;
 };
 
-const archivos = import.meta.glob('./conceptos/*.md', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>;
+let cache: Promise<Concept[]> | undefined;
 
-export const concepts: Concept[] = Object.entries(archivos).map(([ruta, contenido]) =>
-  desdeMarkdown(ruta, contenido),
-);
+export const getAllConcepts = (): Promise<Concept[]> => (cache ??= cargar());
 
-export const getAllConcepts = (): Concept[] => concepts;
+export const getConceptBySlug = async (slug: string): Promise<Concept | undefined> =>
+  (await getAllConcepts()).find((c) => c.slug === slug);
 
-export const getConceptBySlug = (slug: string): Concept | undefined =>
-  concepts.find((c) => c.slug === slug);
-
-export const getConceptsByPart = (partSlug: string): Concept[] =>
-  concepts
+export const getConceptsByPart = async (partSlug: string): Promise<Concept[]> =>
+  (await getAllConcepts())
     .filter((c) => c.partSlug === partSlug)
     .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
-
-export const getAllConceptSlugs = (): string[] => concepts.map((c) => c.slug);
