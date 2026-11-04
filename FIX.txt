@@ -1,0 +1,15 @@
+La respuesta correcta siempre es la mas larga, fix: desarrolla una de las preguntas incorrectas para igualar la longitud de texto
+
+B5 no deberia estar antes de B1? ("La función recibe los resultados por referencia")
+
+no recuerdo haber leido sobre UL en B1 ("La UL en 5UL * 1000UL hace que la multiplicación se haga como unsigned long. Con int de 32 bits no haría falta, pero en placas donde int tiene 16 bits, 3 * 60 * 1000 se desbordaría (ver B.1). Es una costumbre útil para cualquier tiempo en milisegundos.") - ULL tampoco esta - podrias agregar ambos como un ">"
+
+al avanzar de seccion veo el quiz repondido
+
+el boton "intentar de nuevo" en el quiz no tiene sentido, en su lugar al errar te deberia mostrar con pocidad 80 la respuesta correcta y con opacidad 100 la respuesta erronea marcada, esto para poder comparar
+
+donde explicas "extern"??
+
+quizas B4 deba estar mas adelante quizas cambiar lugar con B3, B5 tambien deberia estar mas delante. Evalua reordenar esta y otras partes.
+
+"Las funciones auxiliares con nombres comunes (promedio, limitar, formatear) chocan entre archivos con un multiple definition si no son static. Y cuando una librería o una interrupción te pide "una función" y vos tenés un objeto, un método static es el puente." es confuso
