@@ -1,0 +1,130 @@
+---
+import InlineMd from '../../components/InlineMd.astro';
+import LevelBadge from '../../components/LevelBadge.astro';
+import { QuizCard, type QuizRenderizado } from '../../components/quiz';
+import Base from '../../layouts/Base.astro';
+import { getAllConcepts, getConceptBySlug, getConceptsByPart, type Concept, type Quiz } from '../../content/concepts';
+import { getPartBySlug, partLabel, type Part } from '../../content/parts';
+import { textoPlano } from '../../lib/format';
+import { primerParrafo, renderInline, renderMarkdown, resumir } from '../../lib/markdown';
+import { migas, tituloDePagina, urlDePagina } from '../../lib/seo';
+
+export const getStaticPaths = async () =>
+  (await getAllConcepts()).map((concept) => ({ params: { slug: concept.slug }, props: { concept } }));
+
+type Props = { concept: Concept };
+
+const MARCA_QUIZ = '<!-- quiz -->';
+
+const renderQuiz = async (quiz: Quiz): Promise<QuizRenderizado> => ({
+  promptHtml: await renderMarkdown(quiz.prompt),
+  options: await Promise.all(
+    quiz.options.map(async (o) => ({
+      textHtml: await renderInline(o.text),
+      correct: o.correct,
+      explanationHtml: await renderInline(o.explanation),
+    })),
+  ),
+});
+
+const { concept } = Astro.props;
+const part = getPartBySlug(concept.partSlug) as Part;
+const relacionado = concept.relacionado ? await getConceptBySlug(concept.relacionado) : undefined;
+const siblings = await getConceptsByPart(concept.partSlug);
+const index = siblings.findIndex((c) => c.slug === concept.slug);
+const prev = index > 0 ? siblings[index - 1] : undefined;
+const next = index < siblings.length - 1 ? siblings[index + 1] : undefined;
+
+const [antes = '', despues = ''] = concept.cuerpo.split(MARCA_QUIZ);
+const [htmlAntes, htmlDespues, quizzes] = await Promise.all([
+  renderMarkdown(antes),
+  renderMarkdown(despues),
+  Promise.all(concept.quizzes.map(renderQuiz)),
+]);
+
+const nombre = `${concept.id} ${textoPlano(concept.title)}`;
+const descripcion = resumir(concept.descripcion ?? primerParrafo(concept.cuerpo));
+const url = urlDePagina(Astro.url.pathname, Astro.site);
+const urlParte = new URL(`/partes/${part.slug}`, Astro.site);
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: nombre,
+    description: descripcion,
+    inLanguage: 'es',
+    url: url.href,
+    learningResourceType: 'Lección',
+    educationalLevel: concept.level === 'ESTUDIAR' ? 'Estudiar en profundidad' : 'Conocer',
+    isPartOf: { '@type': 'LearningResource', name: `${partLabel(part)}: ${part.title}`, url: urlParte.href },
+  },
+  migas([
+    { nombre: 'Inicio', url: new URL('/', Astro.site) },
+    { nombre: `${partLabel(part)}: ${part.title}`, url: urlParte },
+    { nombre, url },
+  ]),
+];
+---
+
+<Base titulo={tituloDePagina(nombre)} descripcion={descripcion} tipo="article" jsonLd={jsonLd}>
+  <a href={`/partes/${concept.partSlug}`} class="text-sm text-accent hover:underline">
+    {`${partLabel(part)} — ${part.title}`}
+  </a>
+
+  <div class="mt-3 flex items-start justify-between gap-4">
+    <h1 class="leccion-titulo text-2xl font-semibold tracking-tight text-ink">
+      <span class="mr-2 font-mono text-ink/44">{concept.id}</span>
+      <InlineMd texto={concept.title} />
+    </h1>
+    <LevelBadge level={concept.level} />
+  </div>
+
+  <div class="leccion mt-6" set:html={htmlAntes} />
+
+  {
+    quizzes.length > 0 && (
+      <div class="mt-10">
+        <h2 class="text-xl font-semibold tracking-tight text-ink">Comprobá lo que entendiste</h2>
+        {quizzes.map((quiz, i) => (
+          <QuizCard client:visible quiz={quiz} numero={i + 1} total={quizzes.length} />
+        ))}
+      </div>
+    )
+  }
+
+  {despues.trim() && <div class="leccion mt-10" set:html={htmlDespues} />}
+
+  {
+    relacionado && (
+      <p class="mt-8 rounded-lg border border-ink/10 bg-surface px-5 py-4 text-sm text-ink/64">
+        Para profundizar:{' '}
+        <a href={`/conceptos/${relacionado.slug}`} class="text-accent hover:underline">
+          {relacionado.id} <InlineMd texto={relacionado.title} /> {'->'}
+        </a>
+      </p>
+    )
+  }
+
+  <div class="mt-10 flex items-center justify-between gap-4 border-t border-ink/10 pt-6 text-sm">
+    {
+      prev ? (
+        <a href={`/conceptos/${prev.slug}`} class="text-accent hover:underline">
+          {'<- '}
+          {prev.id} <InlineMd texto={prev.title} />
+        </a>
+      ) : (
+        <span />
+      )
+    }
+    {
+      next ? (
+        <a href={`/conceptos/${next.slug}`} class="text-right text-accent hover:underline">
+          {next.id} <InlineMd texto={next.title} />
+          {' ->'}
+        </a>
+      ) : (
+        <span />
+      )
+    }
+  </div>
+</Base>

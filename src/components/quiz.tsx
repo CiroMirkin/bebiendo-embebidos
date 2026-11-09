@@ -1,8 +1,6 @@
-'use client';
-
 import { useState } from 'react';
 
-// El texto llega ya convertido a HTML desde el servidor (Markdown inline y bloques de codigo).
+// Isla de Astro: el texto llega ya convertido a HTML en el build (Markdown inline y bloques de codigo).
 export type QuizRenderizado = {
   promptHtml: string;
   options: {
