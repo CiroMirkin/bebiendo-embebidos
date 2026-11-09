@@ -2,7 +2,7 @@ export const NOMBRE_SITIO = 'Bebiendo Embebidos';
 const SUFIJO_TITULO = 'Bebiendo Embebidos';
 
 export const DESCRIPCION_SITIO =
-  'Roadmap de Arduino, ESP32, C++ y arquitectura de backend multi-organización, con ejemplos de código y quiz por concepto.';
+  'Lecciones en español de C++ para firmware, Arduino y ESP32, y del backend que recibe sus datos, con código probado y un quiz en cada una.';
 
 // Con build.format 'file', Astro.url.pathname trae ".html" (/conceptos/0-1.html, /index.html); la URL pública no.
 export const urlDePagina = (pathname: string, site: URL | undefined) =>

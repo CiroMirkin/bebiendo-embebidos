@@ -16,7 +16,7 @@ export const parts: Part[] = [
     title: 'C++ para firmware',
     level: 'ESTUDIAR antes de la Parte 1',
     description:
-      'Los fundamentos del lenguaje que aparecen en cualquier firmware: tipos, punteros y referencias, clases, const, preprocesador, archivos .h y .cpp, static, memoria, herencia, enums, volatile y cadenas.',
+      'C++ básico para firmware de Arduino y ESP32: tipos, punteros y referencias, clases, const, preprocesador, .h y .cpp, static, memoria, herencia, enums y cadenas.',
   },
   {
     slug: 'parte-0',
@@ -24,7 +24,7 @@ export const parts: Part[] = [
     title: 'Arduino y ESP32',
     level: 'ESTUDIAR antes de la Parte 1',
     description:
-      'Cómo funciona la placa: el ciclo setup/loop, memorias, pines, ADC, PWM, buses (UART, I2C, SPI), interrupciones, BLE, WiFi, almacenamiento permanente, deep sleep, librerías y el bus CAN.',
+      'Cómo funcionan Arduino y el ESP32: setup y loop, memorias, GPIO, ADC, PWM, UART, I2C, SPI, interrupciones, BLE, WiFi, NVS, deep sleep, librerías y bus CAN.',
   },
   {
     slug: 'parte-1',
@@ -32,7 +32,7 @@ export const parts: Part[] = [
     title: 'C++ aplicado a firmware',
     level: 'ESTUDIAR',
     description:
-      'Cómo usar el lenguaje para diseñar firmware ordenado: responsabilidades separadas, composición, dueños de los objetos, módulos, const, patrones simples y un proyecto en PlatformIO.',
+      'C++ aplicado a diseñar firmware ordenado: responsabilidades separadas, composición, dueños de los objetos, módulos, const, patrones simples y PlatformIO.',
     sources: [
       {
         label: 'C++ Roadmap (nilbuild/developer-roadmap, el proyecto roadmap.sh)',
@@ -46,7 +46,7 @@ export const parts: Part[] = [
     title: 'Arquitectura de firmware Arduino/ESP32',
     level: 'ESTUDIAR',
     description:
-      'Cómo organizar un firmware que crece: capas, máquinas de estados, código no bloqueante, FreeRTOS, interrupciones, manejo de errores, OTA y pruebas fuera del hardware.',
+      'Cómo organizar un firmware ESP32 que crece: capas, máquinas de estados, código no bloqueante, FreeRTOS, interrupciones, errores, OTA y pruebas en la PC.',
   },
   {
     slug: 'parte-3',
@@ -62,7 +62,7 @@ export const parts: Part[] = [
     title: 'Backend: arquitectura para varias organizaciones',
     level: 'ESTUDIAR',
     description:
-      'Un backend en Node, Express y PostgreSQL para muchos productores: aislamiento por organización, roles y permisos, ingesta idempotente, límites de pedidos, índices, colas y observabilidad.',
+      'Backend en Node, Express y PostgreSQL para varias organizaciones: aislamiento, permisos, ingesta idempotente, rate limiting, índices, colas y observabilidad.',
     sources: [
       {
         label: 'Backend Roadmap y API Design Roadmap (nilbuild/developer-roadmap)',
