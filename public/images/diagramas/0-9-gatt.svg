@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" role="img" aria-labelledby="d0-9-gatt-title d0-9-gatt-desc" id="d-0-9-gatt-root">
+  <title id="d0-9-gatt-title">Servicio y características GATT</title>
+  <desc id="d0-9-gatt-desc">El nodo sensor es el servidor GATT: tiene el servicio de lecturas del invernadero con la característica lectura (READ y NOTIFY, con su descriptor 2902) y la característica intervalo (READ y WRITE).</desc>
+  <defs>
+      <style>#d-0-9-gatt-root { font-family: system-ui, sans-serif; color: #100f0f; }
+      #d-0-9-gatt-root .diagram-container { width: 100%; overflow-x: auto; }</style>
+    <marker id="d-0-9-gatt-d0-9-gatt-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d-0-9-gatt-d0-9-gatt-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="380" fill="#fffcf0"/>
+  <path d="M36 68 V122 H56" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M76 148 V202 H96 M76 202 V338 H96" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M116 228 V270 H136" fill="none" stroke="#bc5215" stroke-width="1.5"/>
+  <rect x="16" y="16" width="232" height="52" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="132.0" y="39.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">Nodo sensor</text>
+<text x="132.0" y="57.0" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">servidor GATT</text>
+  <rect x="56" y="96" width="300" height="52" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="206.0" y="119.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">lecturas del invernadero</text>
+<text x="206.0" y="137.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">servicio · UUID 7b1e0001-…</text>
+  <rect x="96" y="176" width="248" height="52" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="220.0" y="199.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">lectura</text>
+<text x="220.0" y="217.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">característica · 7b1e0002-…</text>
+  <rect x="136" y="244" width="208" height="52" rx="6" fill="#ffe7ce" stroke="#bc5215" stroke-width="1.5"/>
+  <text x="240" y="267" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">descriptor 2902</text>
+  <text x="240" y="285" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">el cliente activa el notify</text>
+  <rect x="96" y="312" width="248" height="52" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="220.0" y="335.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">intervalo</text>
+<text x="220.0" y="353.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">característica · 7b1e0003-…</text>
+  <rect x="360" y="191" width="44" height="22" rx="2" fill="#ffffff" stroke="#100f0f" stroke-width="1"/><text x="382.0" y="206" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="middle">READ</text>
+  <rect x="412" y="191" width="58" height="22" rx="2" fill="#ffffff" stroke="#bc5215" stroke-width="1"/><text x="441.0" y="206" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#bc5215" text-anchor="middle">NOTIFY</text>
+  <rect x="360" y="327" width="44" height="22" rx="2" fill="#ffffff" stroke="#100f0f" stroke-width="1"/><text x="382.0" y="342" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="middle">READ</text>
+  <rect x="412" y="327" width="51" height="22" rx="2" fill="#ffffff" stroke="#100f0f" stroke-width="1"/><text x="437.5" y="342" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="middle">WRITE</text>
+</svg>

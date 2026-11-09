@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminación del bus CAN</title>
+  <!-- Fuente de public/images/diagramas/0-14-bus-can.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/0-14-bus-can.html public/images/diagramas/0-14-bus-can.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 640px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-labelledby="d0-14-bus-can-title d0-14-bus-can-desc">
+  <title id="d0-14-bus-can-title">Terminación del bus CAN</title>
+  <desc id="d0-14-bus-can-desc">CANH y CANL recorren el bus con una resistencia de 120 Ω en cada extremo; el controlador, el tablero y otro equipo se cuelgan de las dos líneas, y con todo apagado se miden unos 60 Ω entre ellas.</desc>
+  <defs>
+    <marker id="d0-14-bus-can-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d0-14-bus-can-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="300" fill="#fffcf0"/>
+  <path d="M48 72 H592" fill="none" stroke="#205ea6" stroke-width="2.5"/>
+  <path d="M48 232 H592" fill="none" stroke="#66800b" stroke-width="2.5"/>
+  <path d="M48 72 V136 M48 168 V232" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M592 72 V136 M592 168 V232" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M176 72 V124" fill="none" stroke="#205ea6" stroke-width="2"/>
+  <path d="M176 180 V232" fill="none" stroke="#66800b" stroke-width="2"/>
+  <circle cx="176" cy="72" r="3.5" fill="#205ea6"/>
+  <circle cx="176" cy="232" r="3.5" fill="#66800b"/>
+  <path d="M320 72 V124" fill="none" stroke="#205ea6" stroke-width="2"/>
+  <path d="M320 180 V232" fill="none" stroke="#66800b" stroke-width="2"/>
+  <circle cx="320" cy="72" r="3.5" fill="#205ea6"/>
+  <circle cx="320" cy="232" r="3.5" fill="#66800b"/>
+  <path d="M464 72 V124" fill="none" stroke="#205ea6" stroke-width="2"/>
+  <path d="M464 180 V232" fill="none" stroke="#66800b" stroke-width="2"/>
+  <circle cx="464" cy="72" r="3.5" fill="#205ea6"/>
+  <circle cx="464" cy="232" r="3.5" fill="#66800b"/>
+  <rect x="42" y="136" width="12" height="32" rx="1" fill="#ffe7ce" stroke="#bc5215" stroke-width="1.5"/>
+  <circle cx="48" cy="72" r="3.5" fill="#205ea6"/>
+  <circle cx="48" cy="232" r="3.5" fill="#66800b"/>
+  <rect x="586" y="136" width="12" height="32" rx="1" fill="#ffe7ce" stroke="#bc5215" stroke-width="1.5"/>
+  <circle cx="592" cy="72" r="3.5" fill="#205ea6"/>
+  <circle cx="592" cy="232" r="3.5" fill="#66800b"/>
+  <text x="62" y="156" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#bc5215" text-anchor="start">120 Ω</text>
+  <text x="578" y="156" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#bc5215" text-anchor="end">120 Ω</text>
+  <rect x="112" y="124" width="128" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="176.0" y="149.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">controlador</text>
+<text x="176.0" y="167.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">TWAI + SN65HVD230</text>
+  <rect x="256" y="124" width="128" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="320.0" y="149.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">tablero</text>
+<text x="320.0" y="167.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">TWAI + transceptor</text>
+  <rect x="400" y="124" width="128" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="464.0" y="149.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">otro equipo</text>
+<text x="464.0" y="167.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">transceptor CAN</text>
+  <text x="48" y="60" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#205ea6" text-anchor="start">CANH</text>
+  <text x="48" y="256" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#66800b" text-anchor="start">CANL</text>
+  <text x="320" y="284" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">una resistencia en cada extremo: con todo apagado, entre CANH y CANL se miden unos 60 Ω</text>
+</svg>
+</div>
+</main>
+</body>
+</html>

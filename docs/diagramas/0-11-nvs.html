@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namespaces y claves en NVS</title>
+  <!-- Fuente de public/images/diagramas/0-11-nvs.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/0-11-nvs.html public/images/diagramas/0-11-nvs.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 640px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 296" role="img" aria-labelledby="d0-11-nvs-title d0-11-nvs-desc">
+  <title id="d0-11-nvs-title">Namespaces y claves en NVS</title>
+  <desc id="d0-11-nvs-desc">La partición nvs guarda namespaces, y cada uno sus claves: riego tiene umbral y duracionMs, y ventilacion tiene su propio umbral, que no se pisa con el de riego.</desc>
+  <defs>
+    <marker id="d0-11-nvs-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d0-11-nvs-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="296" fill="#fffcf0"/>
+  <rect x="16" y="16" width="608" height="264" rx="6" fill="none" stroke="#6f6e69" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="32" y="40" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#6f6e69" text-anchor="start">partición nvs (en la flash)</text>
+  <rect x="40" y="56" width="272" height="176" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="56" y="82" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">namespace</text>
+  <text x="296" y="82" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#100f0f" text-anchor="end">&quot;riego&quot;</text>
+  <rect x="56" y="100" width="240" height="44" rx="4" fill="#ffe7ce" stroke="#bc5215" stroke-width="1"/>
+  <text x="72" y="127" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">umbral</text>
+  <text x="280" y="127" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">float · 38.5</text>
+  <rect x="56" y="156" width="240" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="72" y="183" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">duracionMs</text>
+  <text x="280" y="183" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">uint · 30000</text>
+  <rect x="328" y="56" width="272" height="176" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="344" y="82" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">namespace</text>
+  <text x="584" y="82" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#100f0f" text-anchor="end">&quot;ventilacion&quot;</text>
+  <rect x="344" y="100" width="240" height="44" rx="4" fill="#ffe7ce" stroke="#bc5215" stroke-width="1"/>
+  <text x="360" y="127" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">umbral</text>
+  <text x="568" y="127" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">float</text>
+  <text x="320" y="260" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">la misma clave en dos namespaces no se pisa · máximo 15 caracteres</text>
+</svg>
+</div>
+</main>
+</body>
+</html>

@@ -29,6 +29,8 @@ const leerInfo = (info: string | undefined) => {
   return { lang: lang || 'text', etiqueta: resto.join(' ') };
 };
 
+const esDiagrama = (href: string) => href.startsWith('/images/diagramas/');
+
 export const resaltarCodigo = (code: string, lang: string) =>
   codeToHtml(code, { lang: LANG_MAP[lang] ?? 'text', theme: flexokiLight });
 
@@ -41,6 +43,16 @@ const marked = new Marked({
     code.resaltado = await resaltarCodigo(code.text, leerInfo(code.lang).lang);
   },
   renderer: {
+    // Un diagrama solo en su párrafo pasa a <figure>; en medio de texto queda como imagen común,
+    // porque un <figure> no puede ir dentro de un <p>.
+    paragraph({ tokens }) {
+      const unico = tokens.length === 1 ? tokens[0] : undefined;
+      if (unico?.type !== 'image') return false;
+      const { href, title, text } = unico as Tokens.Image;
+      if (!esDiagrama(href)) return false;
+      const pie = title ? `<figcaption>${escapar(title)}</figcaption>` : '';
+      return `<figure class="diagrama"><img src="${escapar(href)}" alt="${escapar(text)}">${pie}</figure>\n`;
+    },
     link({ href, title, tokens }) {
       const texto = this.parser.parseInline(tokens);
       const externo = /^https?:\/\//.test(href);

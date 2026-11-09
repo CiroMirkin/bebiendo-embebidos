@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El ciclo de un nodo a batería</title>
+  <!-- Fuente de public/images/diagramas/0-12-ciclo-nodo.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/0-12-ciclo-nodo.html public/images/diagramas/0-12-ciclo-nodo.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 640px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 264" role="img" aria-labelledby="d0-12-ciclo-nodo-title d0-12-ciclo-nodo-desc">
+  <title id="d0-12-ciclo-nodo-title">El ciclo de un nodo a batería</title>
+  <desc id="d0-12-ciclo-nodo-desc">El nodo despierta, lee los sensores, transmite, prepara el próximo despertar y entra en deep sleep; vuelve a despertar a los 5 minutos o cuando se presiona el botón.</desc>
+  <defs>
+    <marker id="d0-12-ciclo-nodo-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d0-12-ciclo-nodo-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="264" fill="#fffcf0"/>
+  <rect x="12" y="96" width="104" height="64" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="64.0" y="125.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">despertar</text>
+<text x="64.0" y="143.0" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">en setup()</text>
+  <path d="M116 128 H138" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d0-12-ciclo-nodo-arrow)"/>
+  <rect x="140" y="96" width="104" height="64" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="192.0" y="125.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">leer</text>
+<text x="192.0" y="143.0" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">sensores</text>
+  <path d="M244 128 H266" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d0-12-ciclo-nodo-arrow)"/>
+  <rect x="268" y="96" width="104" height="64" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="320.0" y="125.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">transmitir</text>
+<text x="320.0" y="143.0" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">WiFi: 1 a 3 s</text>
+  <path d="M372 128 H394" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d0-12-ciclo-nodo-arrow)"/>
+  <rect x="396" y="96" width="104" height="64" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="448.0" y="125.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">preparar</text>
+<text x="448.0" y="143.0" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">el despertar</text>
+  <path d="M500 128 H522" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d0-12-ciclo-nodo-arrow)"/>
+  <rect x="524" y="96" width="104" height="64" rx="6" fill="#ffe7ce" stroke="#bc5215" stroke-width="1.5"/>
+<text x="576.0" y="125.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">deep sleep</text>
+<text x="576.0" y="143.0" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">unos 10 µA</text>
+  <path d="M12 68 V76 M12 72 H500 M500 68 V76" fill="none" stroke="#100f0f" stroke-width="1"/>
+  <text x="256" y="56" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">despierto: todo pasa en setup(), loop() queda vacío</text>
+  <path d="M524 68 V76 M524 72 H628 M628 68 V76" fill="none" stroke="#bc5215" stroke-width="1"/>
+  <text x="576" y="56" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#bc5215" text-anchor="middle">dormido</text>
+  <path d="M576 160 V216 Q576 224 568 224 H72 Q64 224 64 216 V170" fill="none" stroke="#bc5215" stroke-width="1.5"/>
+  <path d="M58 170 L64 160 L70 170 z" fill="#bc5215"/>
+  <text x="320" y="248" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">a los 5 minutos, o antes si se presiona el botón (GPIO 27, ext0)</text>
+</svg>
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divisor resistivo para la batería</title>
+  <!-- Fuente de public/images/diagramas/0-4-divisor.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/0-4-divisor.html public/images/diagramas/0-4-divisor.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 560px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 288" role="img" aria-labelledby="d0-4-divisor-title d0-4-divisor-desc">
+  <title id="d0-4-divisor-title">Divisor resistivo para la batería</title>
+  <desc id="d0-4-divisor-desc">Dos resistencias de 100 kΩ en serie entre la batería y GND: el GPIO 34 lee el punto del medio, que recibe la mitad del voltaje, 2,1 V con la batería cargada a 4,2 V.</desc>
+  <defs>
+    <marker id="d0-4-divisor-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d0-4-divisor-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="560" height="288" fill="#fffcf0"/>
+  <rect x="128" y="16" width="144" height="48" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="200.0" y="37.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">Batería de litio</text>
+<text x="200.0" y="55.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">hasta 4,2 V</text>
+  <path d="M200 64 V88 M200 120 V188 M200 220 V244" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="194" y="88" width="12" height="32" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="194" y="188" width="12" height="32" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="216" y="102" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">R1</text>
+  <text x="216" y="118" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">100 kΩ</text>
+  <text x="216" y="202" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">R2</text>
+  <text x="216" y="218" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">100 kΩ</text>
+  <circle cx="200" cy="154" r="3.5" fill="#100f0f"/>
+  <path d="M200 154 H376" fill="none" stroke="#bc5215" stroke-width="2"/>
+  <text x="288" y="144" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#bc5215" text-anchor="middle">2,1 V</text>
+  <rect x="376" y="126" width="144" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="448.0" y="151.0" font-family="ui-monospace, monospace" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">GPIO 34</text>
+<text x="448.0" y="169.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">ESP32 · ADC1</text>
+  <path d="M188 244 H212" fill="none" stroke="#100f0f" stroke-width="1.5"/><path d="M192 249 H208" fill="none" stroke="#100f0f" stroke-width="1.5"/><path d="M196 254 H204" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="200" y="274" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">GND</text>
+  <text x="376" y="226" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">en el código:</text>
+  <text x="376" y="244" font-family="ui-monospace, monospace" font-size="12" font-weight="400" fill="#100f0f" text-anchor="start">lectura × (R1 + R2) / R2</text>
+  <text x="376" y="262" font-family="ui-monospace, monospace" font-size="12" font-weight="400" fill="#100f0f" text-anchor="start">= lectura × 2</text>
+</svg>
+</div>
+</main>
+</body>
+</html>

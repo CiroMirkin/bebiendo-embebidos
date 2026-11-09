@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dónde se fijan las versiones</title>
+  <!-- Fuente de public/images/diagramas/0-13-versiones.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/0-13-versiones.html public/images/diagramas/0-13-versiones.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 640px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 304" role="img" aria-labelledby="d0-13-versiones-title d0-13-versiones-desc">
+  <title id="d0-13-versiones-title">Dónde se fijan las versiones</title>
+  <desc id="d0-13-versiones-desc">En el Arduino IDE todos los sketches usan el core y las librerías instalados en la computadora; en PlatformIO, el platformio.ini fija la plataforma y las librerías de cada entorno del proyecto.</desc>
+  <defs>
+    <marker id="d0-13-versiones-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d0-13-versiones-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="304" fill="#fffcf0"/>
+  <text x="164" y="28" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="middle">Arduino IDE: por computadora</text>
+  <text x="476" y="28" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="middle">PlatformIO: por proyecto</text>
+  <path d="M320 16 V296" fill="none" stroke="#cecdc3" stroke-width="1"/>
+  <path d="M88 96 V172" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d0-13-versiones-arrow)"/>
+  <path d="M240 96 V172" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d0-13-versiones-arrow)"/>
+  <rect x="24" y="48" width="128" height="48" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="88.0" y="69.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">sketch</text>
+<text x="88.0" y="87.0" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">del nodo</text>
+  <rect x="176" y="48" width="128" height="48" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="240.0" y="69.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">sketch</text>
+<text x="240.0" y="87.0" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">del controlador</text>
+  <rect x="24" y="176" width="280" height="104" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="164" y="200" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">lo instalado en esta computadora</text>
+  <text x="40" y="228" font-family="ui-monospace, monospace" font-size="12" font-weight="400" fill="#100f0f" text-anchor="start">core esp32</text>
+  <text x="288" y="228" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">la versión instalada</text>
+  <text x="40" y="252" font-family="ui-monospace, monospace" font-size="12" font-weight="400" fill="#100f0f" text-anchor="start">Arduino/libraries</text>
+  <text x="288" y="252" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">una versión de cada una</text>
+  <text x="164" y="272" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#bc5215" text-anchor="middle">otra persona compila con otras versiones</text>
+  <rect x="336" y="48" width="288" height="92" rx="6" fill="#ffe7ce" stroke="#bc5215" stroke-width="1.5"/>
+  <text x="352" y="70" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">platformio.ini · [env]</text>
+  <text x="352" y="94" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">platform = espressif32 @ 6.9.0</text>
+  <text x="352" y="112" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">ArduinoJson @ ^7.2.0</text>
+  <text x="352" y="130" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">los mismos para cualquiera que compile</text>
+  <path d="M412 140 V172" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d0-13-versiones-arrow)"/>
+  <path d="M564 140 V172" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d0-13-versiones-arrow)"/>
+  <rect x="336" y="176" width="152" height="104" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="412" y="200" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">env:controlador</text>
+  <text x="412" y="224" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">esp32-s3-devkitc-1</text>
+  <text x="412" y="244" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">+ U8g2 @ ^2.36.0</text>
+  <rect x="504" y="176" width="120" height="104" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="564" y="200" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">env:nodo</text>
+  <text x="564" y="224" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">esp32dev</text>
+</svg>
+</div>
+</main>
+</body>
+</html>
