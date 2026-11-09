@@ -57,6 +57,7 @@ src/
     404.astro
 tools/
   verificar-build.py        revisa que el build tenga todas las páginas, el SEO y los enlaces internos
+  verificar-diagramas.py    revisa que los diagramas existan, tengan texto alternativo y no carguen nada de afuera
   verificar-ejemplos.py     compila los ejemplos de C++ completos contra el core esp32
   verificar-quiz.py         revisa que la respuesta correcta no se note por ser la más larga
 ```
@@ -85,6 +86,8 @@ quiz:
 El build falla si falta `id`, `parte`, `titulo` o `nivel`, si `nivel` no es ESTUDIAR o CONOCER, o si `parte` o `relacionado` apuntan a algo que no existe. Sin `descripcion`, se usa el primer párrafo de la lección.
 
 El cuerpo es Markdown. Los bloques de código llevan el lenguaje y una etiqueta opcional (` ```cpp sensor.ino `), los links internos son `/conceptos/<slug>`, y `<!-- quiz -->` marca dónde va el quiz.
+
+Los diagramas van en `public/images/diagramas/<slug>-<nombre>.svg`, con su HTML fuente en `docs/diagramas/` con el mismo nombre. Una imagen sola en su párrafo se muestra como figura de ancho completo, y el título opcional queda como pie: `![texto alternativo](/images/diagramas/0-7-bus.svg "Pie de la figura")`. Cada SVG necesita `<title>`, `<desc>` y `viewBox`; `python tools/verificar-diagramas.py` lo revisa.
 
 En cada pregunta, la opción correcta no puede ser más larga que todas las incorrectas por más de 6 caracteres; `python tools/verificar-quiz.py` lo revisa.
 
