@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 304" role="img" aria-labelledby="d0-1-tareas-millis-title d0-1-tareas-millis-desc" id="d-0-1-tareas-millis-root">
+  <title id="d0-1-tareas-millis-title">Tres tareas con millis()</title>
+  <desc id="d0-1-tareas-millis-desc">En cada vuelta de loop() se atiende el botón; la pantalla se actualiza cada 500 ms y los sensores se leen cada 2000 ms, sin que ninguna tarea espere a otra.</desc>
+  <defs>
+      <style>#d-0-1-tareas-millis-root { font-family: system-ui, sans-serif; color: #100f0f; }
+      #d-0-1-tareas-millis-root .diagram-container { width: 100%; overflow-x: auto; }</style>
+    <marker id="d-0-1-tareas-millis-d0-1-tareas-millis-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d-0-1-tareas-millis-d0-1-tareas-millis-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="304" fill="#fffcf0"/>
+  <path d="M176 72 H616" fill="none" stroke="#cecdc3" stroke-width="1"/>
+  <text x="16" y="70" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">atenderBoton()</text>
+  <text x="16" y="86" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">en cada vuelta de loop()</text>
+  <path d="M176 148 H616" fill="none" stroke="#cecdc3" stroke-width="1"/>
+  <text x="16" y="146" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">actualizarPantalla()</text>
+  <text x="16" y="162" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">cada 500 ms</text>
+  <path d="M176 224 H616" fill="none" stroke="#cecdc3" stroke-width="1"/>
+  <text x="16" y="222" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">leerSensores()</text>
+  <text x="16" y="238" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">cada 2000 ms</text>
+  <path d="M180 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M188 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M196 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M204 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M212 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M220 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M228 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M236 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M244 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M252 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M260 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M268 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M276 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M284 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M292 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M300 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M308 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M316 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M324 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M332 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M340 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M348 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M356 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M364 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M372 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M380 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M388 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M396 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M404 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M412 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M420 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M428 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M436 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M444 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M452 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M460 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M468 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M476 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M484 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M492 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M500 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M508 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M516 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M524 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M532 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M540 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M548 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M556 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M564 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M572 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M580 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M588 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M596 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M604 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <path d="M612 62 V82" fill="none" stroke="#6f6e69" stroke-width="1.5"/>
+  <rect x="260.0" y="136" width="8" height="24" rx="1" fill="#205ea6" stroke="#205ea6" stroke-width="1"/>
+  <rect x="348.0" y="136" width="8" height="24" rx="1" fill="#205ea6" stroke="#205ea6" stroke-width="1"/>
+  <rect x="436.0" y="136" width="8" height="24" rx="1" fill="#205ea6" stroke="#205ea6" stroke-width="1"/>
+  <rect x="524.0" y="136" width="8" height="24" rx="1" fill="#205ea6" stroke="#205ea6" stroke-width="1"/>
+  <rect x="612.0" y="136" width="8" height="24" rx="1" fill="#205ea6" stroke="#205ea6" stroke-width="1"/>
+  <rect x="524.0" y="212" width="8" height="24" rx="1" fill="#bc5215" stroke="#bc5215" stroke-width="1"/>
+  <path d="M176 268 H616" fill="none" stroke="#100f0f" stroke-width="1"/>
+  <path d="M176.0 264 V272" fill="none" stroke="#100f0f" stroke-width="1"/>
+  <text x="176.0" y="290" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">0</text>
+  <path d="M264.0 264 V272" fill="none" stroke="#100f0f" stroke-width="1"/>
+  <text x="264.0" y="290" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">500</text>
+  <path d="M352.0 264 V272" fill="none" stroke="#100f0f" stroke-width="1"/>
+  <text x="352.0" y="290" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">1000</text>
+  <path d="M440.0 264 V272" fill="none" stroke="#100f0f" stroke-width="1"/>
+  <text x="440.0" y="290" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">1500</text>
+  <path d="M528.0 264 V272" fill="none" stroke="#100f0f" stroke-width="1"/>
+  <text x="528.0" y="290" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">2000</text>
+  <path d="M616.0 264 V272" fill="none" stroke="#100f0f" stroke-width="1"/>
+  <text x="616.0" y="290" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">2500</text>
+  <text x="16" y="290" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">millis() en ms</text>
+</svg>

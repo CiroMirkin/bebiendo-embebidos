@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Las tres memorias del ESP32</title>
+  <!-- Fuente de public/images/diagramas/0-2-memorias.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/0-2-memorias.html public/images/diagramas/0-2-memorias.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 640px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="d0-2-memorias-title d0-2-memorias-desc">
+  <title id="d0-2-memorias-title">Las tres memorias del ESP32</title>
+  <desc id="d0-2-memorias-desc">La flash guarda el programa, la NVS y los archivos y no se borra al apagar; la SRAM interna tiene las variables, los stacks y el heap; la PSRAM opcional suma varios megas más lentos para buffers grandes.</desc>
+  <defs>
+    <marker id="d0-2-memorias-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d0-2-memorias-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="320" fill="#fffcf0"/>
+  <rect x="16" y="16" width="200" height="288" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="116.0" y="42" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#100f0f" text-anchor="middle">Flash</text>
+  <text x="116.0" y="60" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">4 a 16 MB · chip aparte</text>
+  <text x="116.0" y="76" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">no se borra al apagar</text>
+  <rect x="28" y="92" width="176" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="116.0" y="111" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">app0</text>
+  <text x="116.0" y="127" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">el programa</text>
+  <rect x="28" y="144" width="176" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="116.0" y="163" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">app1</text>
+  <text x="116.0" y="179" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">segunda copia, para OTA</text>
+  <rect x="28" y="196" width="176" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="116.0" y="215" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">nvs</text>
+  <text x="116.0" y="231" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">configuración</text>
+  <rect x="28" y="248" width="176" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="116.0" y="267" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">spiffs / littlefs</text>
+  <text x="116.0" y="283" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">archivos</text>
+  <rect x="232" y="16" width="184" height="288" rx="6" fill="#ffe7ce" stroke="#bc5215" stroke-width="1.5"/>
+  <text x="324.0" y="42" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#100f0f" text-anchor="middle">SRAM interna</text>
+  <text x="324.0" y="60" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">512 KB en el S3</text>
+  <text x="324.0" y="76" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">rápida, se borra al apagar</text>
+  <rect x="244" y="92" width="160" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="324.0" y="111" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">globales</text>
+  <text x="324.0" y="127" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">variables globales</text>
+  <rect x="244" y="144" width="160" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="324.0" y="163" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">stack</text>
+  <text x="324.0" y="179" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">uno por tarea</text>
+  <rect x="244" y="196" width="160" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="324.0" y="215" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">heap</text>
+  <text x="324.0" y="231" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">200 a 300 KB libres</text>
+  <rect x="244" y="248" width="160" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="324.0" y="267" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">sistema</text>
+  <text x="324.0" y="283" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">WiFi, BLE, núcleo</text>
+  <rect x="432" y="16" width="192" height="288" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="528.0" y="42" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#100f0f" text-anchor="middle">PSRAM</text>
+  <text x="528.0" y="60" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">2 a 8 MB · chip aparte</text>
+  <text x="528.0" y="76" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">más lenta, se borra al apagar</text>
+  <rect x="444" y="92" width="168" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="528.0" y="111" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">ps_malloc()</text>
+  <text x="528.0" y="127" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">pedir memoria acá</text>
+  <rect x="444" y="144" width="168" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="528.0" y="163" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">buffers</text>
+  <text x="528.0" y="179" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">de pantalla</text>
+  <rect x="444" y="196" width="168" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="528.0" y="215" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">historiales</text>
+  <text x="528.0" y="231" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">largos</text>
+  <rect x="444" y="248" width="168" height="44" rx="4" fill="#ffffff" stroke="#cecdc3" stroke-width="1"/>
+  <text x="528.0" y="267" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">QSPI u OPI</text>
+  <text x="528.0" y="283" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">Herramientas → PSRAM</text>
+</svg>
+</div>
+</main>
+</body>
+</html>

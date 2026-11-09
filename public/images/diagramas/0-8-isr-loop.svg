@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 248" role="img" aria-labelledby="d0-8-isr-loop-title d0-8-isr-loop-desc" id="d-0-8-isr-loop-root">
+  <title id="d0-8-isr-loop-title">La ISR le avisa a loop()</title>
+  <desc id="d0-8-isr-loop-desc">Un flanco en el pin dispara la ISR, que solo anota en una variable volatile (bandera, contador o momento) y vuelve; loop() la revisa cuando le toca y hace el trabajo pesado.</desc>
+  <defs>
+      <style>#d-0-8-isr-loop-root { font-family: system-ui, sans-serif; color: #100f0f; }
+      #d-0-8-isr-loop-root .diagram-container { width: 100%; overflow-x: auto; }</style>
+    <marker id="d-0-8-isr-loop-d0-8-isr-loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d-0-8-isr-loop-d0-8-isr-loop-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="248" fill="#fffcf0"/>
+  <rect x="16" y="72" width="128" height="72" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="80.0" y="105.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">flanco</text>
+<text x="80.0" y="123.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">en el pin</text>
+  <rect x="176" y="72" width="128" height="72" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="240.0" y="105.0" font-family="ui-monospace, monospace" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">ISR</text>
+<text x="240.0" y="123.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">IRAM_ATTR</text>
+  <rect x="336" y="72" width="128" height="72" rx="6" fill="#ffe7ce" stroke="#bc5215" stroke-width="1.5"/>
+<text x="400.0" y="105.0" font-family="ui-monospace, monospace" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">volatile</text>
+<text x="400.0" y="123.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">la ISR la escribe</text>
+  <rect x="496" y="72" width="128" height="72" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="560.0" y="105.0" font-family="ui-monospace, monospace" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">loop()</text>
+<text x="560.0" y="123.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">cuando le toca</text>
+  <path d="M144 108 H174" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d-0-8-isr-loop-d0-8-isr-loop-arrow)"/>
+  <path d="M304 108 H334" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d-0-8-isr-loop-d0-8-isr-loop-arrow)"/>
+  <path d="M464 108 H494" fill="none" stroke="#6f6e69" stroke-width="1.5" marker-end="url(#d-0-8-isr-loop-d0-8-isr-loop-arrow)"/>
+  <text x="80" y="48" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="middle">pasa algo</text>
+  <text x="240" y="48" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="middle">anota y vuelve</text>
+  <text x="400" y="48" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="middle">variable compartida</text>
+  <rect x="336" y="168" width="128" height="64" rx="6" fill="none" stroke="#cecdc3" stroke-width="1"/>
+  <text x="400" y="194" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">bandera, contador</text>
+  <text x="400" y="212" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">o momento</text>
+  <text x="560" y="48" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="middle">hace el trabajo</text>
+  <rect x="176" y="168" width="128" height="64" rx="6" fill="none" stroke="#cecdc3" stroke-width="1"/>
+  <text x="240" y="190" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">nada de Serial,</text>
+  <text x="240" y="206" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">delay, new, String</text>
+  <text x="240" y="222" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">ni WiFi</text>
+  <rect x="496" y="168" width="128" height="64" rx="6" fill="none" stroke="#cecdc3" stroke-width="1"/>
+  <text x="560" y="194" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">acá sí: Serial,</text>
+  <text x="560" y="212" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">WiFi, HTTP</text>
+</svg>

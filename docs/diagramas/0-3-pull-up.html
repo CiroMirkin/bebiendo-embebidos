@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botón con pull-up interno</title>
+  <!-- Fuente de public/images/diagramas/0-3-pull-up.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/0-3-pull-up.html public/images/diagramas/0-3-pull-up.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 640px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 304" role="img" aria-labelledby="d0-3-pull-up-title d0-3-pull-up-desc">
+  <title id="d0-3-pull-up-title">Botón con pull-up interno</title>
+  <desc id="d0-3-pull-up-desc">Con INPUT_PULLUP, una resistencia interna une el pin a 3,3 V: con el botón suelto el pin lee HIGH, y al presionarlo el botón lo une a GND y lee LOW.</desc>
+  <defs>
+    <marker id="d0-3-pull-up-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d0-3-pull-up-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="304" fill="#fffcf0"/>
+  <rect x="120" y="16" width="248" height="168" rx="6" fill="none" stroke="#6f6e69" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="132" y="36" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#6f6e69" text-anchor="start">ESP32</text>
+  <text x="200" y="44" font-family="ui-monospace, monospace" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="middle">3,3 V</text>
+  <path d="M200 52 V72 M200 104 V184 M200 184 V204" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="194" y="72" width="12" height="32" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="214" y="86" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">pull-up</text>
+  <text x="214" y="100" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">interno</text>
+  <circle cx="200" cy="140" r="3.5" fill="#100f0f"/>
+  <path d="M200 140 H260" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="268" y="136" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">digitalRead()</text>
+  <text x="268" y="150" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">INPUT_PULLUP</text>
+  <text x="208" y="178" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">GPIO</text>
+  <circle cx="200" cy="204" r="3.5" fill="#100f0f"/>
+  <path d="M200 236 L218 208" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <circle cx="200" cy="236" r="3.5" fill="#100f0f"/>
+  <text x="228" y="226" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#100f0f" text-anchor="start">botón</text>
+  <path d="M200 236 V260" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M188 260 H212" fill="none" stroke="#100f0f" stroke-width="1.5"/><path d="M192 265 H208" fill="none" stroke="#100f0f" stroke-width="1.5"/><path d="M196 270 H204" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="200" y="290" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">GND</text>
+  <rect x="400" y="48" width="224" height="76" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="416" y="74" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">suelto</text>
+  <text x="608" y="74" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#205ea6" text-anchor="end">HIGH</text>
+  <text x="416" y="96" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">no circula corriente: el</text>
+  <text x="416" y="112" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">pull-up deja el pin en 3,3 V</text>
+  <rect x="400" y="144" width="224" height="76" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="416" y="170" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">presionado</text>
+  <text x="608" y="170" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#bc5215" text-anchor="end">LOW</text>
+  <text x="416" y="192" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">el botón une el pin a GND;</text>
+  <text x="416" y="208" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">la resistencia limita la corriente</text>
+</svg>
+</div>
+</main>
+</body>
+</html>
