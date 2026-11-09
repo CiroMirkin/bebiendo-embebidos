@@ -60,10 +60,24 @@ Los ejemplos de "Mal:" que usan un pin incorrecto a propósito (strapping, ADC2,
 |---|---|
 | LED | 2 |
 | I2C SDA / SCL (SHT31) | 21 / 22 |
+| Llave del sensor de suelo (P-MOSFET; bajo = prendido) | 25 |
 | Botón para despertar (RTC GPIO, ext0) | 27 |
 | Luz, fotorresistencia (ADC1) | 33 |
 | Humedad del suelo (ADC1); un segundo sensor en el 32 | 34 |
 | Batería, divisor (ADC1) | 35 |
+
+## Electrónica (parte E)
+
+- **Fuente del controlador**: 12 V y 5 A, fusible lento de 4 A, Schottky en serie, 470 µF y 100 nF en la entrada, step-down de 12 V a 5 V para la placa y 100 µF a su salida. Las luces de cultivo tienen su propia fuente.
+- **Consumos a 12 V**: bomba 1,2 A (hasta unos 5 A al arrancar), ventilador 0,3 A, motor de la cortina 0,8 A (hasta unos 3 A al arrancar). Placa, pantalla, relés y sensores: 0,25 A a 5 V.
+- **Buzzer de alarma**: 12 V y 30 mA, con un BC547 del lado bajo en el GPIO 2 del controlador (R de base 680 Ω, 47 kΩ de base a masa).
+- **Llave del sensor de suelo del nodo**: AO3401 con el source en 3,3 V, pull-up de 100 kΩ en el gate, 10 kΩ al GPIO 25 y 47 nF entre gate y drain (arranque suave). El sensor consume unos 5 mA, tiene 10 µF en su entrada y se estabiliza en alrededor de 1 s (`ESTABILIZACION_MS = 1000`, a confirmar en banco).
+- **Llave de 5 V**: AO3401 con pull-up de 10 kΩ, BC547 con 4,7 kΩ de base y 47 kΩ de base a masa (alto = prendido), fusible rearmable de 0,25 A y 100 µF a la salida.
+- **Simulaciones y esquemáticos**: en `docs/electronica/` (netlists de ngspice y `diagramas.py`, que genera los SVG de `public/images/`). Los modelos de los transistores son genéricos, y el regulador del nodo se supone de 0,3 Ω.
+
+## Otro ejemplo: el control de acceso del taller
+
+La lección de USB host (E.4) no usa el invernadero. Su ejemplo es un control de acceso para un taller: un ESP32-S3-DevKitC-1 que lee un teclado numérico USB (HID boot) y abre una cerradura con un relé durante 3 s si el código es correcto. GPIO 19 y 20 van a D− y D+ de un USB-A hembra, el GPIO 5 maneja la llave de 5 V del VBUS y el GPIO 6 el relé de la cerradura. El código de ejemplo es `4071`; en el sistema real vendría de NVS.
 
 ## Otros valores
 

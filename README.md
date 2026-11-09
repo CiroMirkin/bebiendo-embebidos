@@ -6,10 +6,11 @@ Todas las lecciones usan el mismo ejemplo: el control de un invernadero, con nod
 
 ## Contenido
 
-- 11 partes: la Base (C++), la Parte 0 (Arduino y ESP32) y las Partes 1 a 9.
-- 74 lecciones (`/conceptos/<slug>`), de dos tipos:
+- 12 partes: la Base (C++), la Parte 0 (Arduino y ESP32), Electrónica y las Partes 1 a 9.
+- 81 lecciones (`/conceptos/<slug>`), de tres tipos:
   - ESTUDIAR: idea central, por qué te importa, paso a paso, tres o más ejemplos, errores comunes, un ejercicio con pista y solución, un quiz de cuatro preguntas y un resumen.
   - CONOCER: una versión más liviana, con cómo funciona, uno o dos ejemplos, cuándo conviene y cuándo no, y un quiz de dos preguntas.
+  - PROFUNDIZAR: la misma estructura que ESTUDIAR, para temas opcionales que hacen falta recién cuando armás hardware propio (la parte Electrónica).
 
 ## Cómo correrlo
 
@@ -41,7 +42,7 @@ src/
   components/
     quiz.tsx              quiz interactivo ('use client')
     inline-md.tsx         títulos con `código` en listas y navegación
-    level-badge.tsx       ESTUDIAR / CONOCER
+    level-badge.tsx       ESTUDIAR / CONOCER / PROFUNDIZAR
   pages/
     index.tsx             listado de las partes
     partes/[part].tsx     conceptos de una parte

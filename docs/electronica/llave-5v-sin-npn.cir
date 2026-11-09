@@ -1,0 +1,14 @@
+* Error de la lección e-2: P-MOSFET sobre 5 V manejado directo por un GPIO de 3,3 V
+* Con el GPIO en alto el gate queda 1,7 V abajo del source y el MOSFET sigue conduciendo.
+V5 v5 0 DC 5
+M1 out gate v5 PAO3401
+R1 v5 gate 100k
+RG gpio gate 10k
+VG gpio 0 DC 0
+RL out 0 50                   ; carga de 100 mA
+.model PAO3401 VDMOS pchan Vto=-0.9 Kp=20 Rd=0.03 Rs=0.01 Cgs=900p Cgdmax=300p Cgdmin=80p
+.control
+dc VG 0 3.3 3.3
+print v(out) v(gate)
+.endc
+.end

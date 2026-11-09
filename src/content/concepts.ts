@@ -11,7 +11,7 @@ export type Quiz = {
   options: QuizOption[];
 };
 
-type Level = 'ESTUDIAR' | 'CONOCER';
+type Level = 'ESTUDIAR' | 'CONOCER' | 'PROFUNDIZAR';
 
 // Una lección por concepto: un .md en ./conceptos, con el quiz en el frontmatter.
 export type Concept = {

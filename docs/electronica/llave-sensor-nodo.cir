@@ -1,0 +1,15 @@
+* Llave del sensor de suelo del nodo (lección e-2): P-MOSFET manejado directo por el GPIO 25
+* GPIO 25 en alto (3,3 V): sensor apagado. En bajo: sensor prendido.
+* Modelo genérico aproximado del AO3401, no el del fabricante.
+V33 v33 0 DC 3.3              ; salida del regulador de 3,3 V del nodo
+M1 sens gate v33 PAO3401      ; drain gate source
+R1 v33 gate 100k              ; pull-up del gate: apagado por defecto
+RG gpio gate 10k              ; resistencia del gate
+VG gpio 0 DC 0                ; GPIO 25
+RL sens 0 660                 ; sensor de suelo: unos 5 mA a 3,3 V
+.model PAO3401 VDMOS pchan Vto=-0.9 Kp=20 Rd=0.03 Rs=0.01 Cgs=900p Cgdmax=300p Cgdmin=80p
+.control
+dc VG 0 3.3 3.3
+print v(sens) v(gate) i(VG) i(V33)
+.endc
+.end
