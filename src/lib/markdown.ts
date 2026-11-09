@@ -43,16 +43,15 @@ const marked = new Marked({
     code.resaltado = await resaltarCodigo(code.text, leerInfo(code.lang).lang);
   },
   renderer: {
-    image({ href, title, text }) {
-      if (!esDiagrama(href)) return false;
-      const pie = title ? `<figcaption>${escapar(title)}</figcaption>` : '';
-      return `<figure class="diagrama"><img src="${escapar(href)}" alt="${escapar(text)}">${pie}</figure>`;
-    },
-    // Un <figure> no puede ir dentro de un <p>.
+    // Un diagrama solo en su párrafo pasa a <figure>; en medio de texto queda como imagen común,
+    // porque un <figure> no puede ir dentro de un <p>.
     paragraph({ tokens }) {
       const unico = tokens.length === 1 ? tokens[0] : undefined;
-      if (unico?.type !== 'image' || !esDiagrama((unico as Tokens.Image).href)) return false;
-      return this.parser.parseInline(tokens);
+      if (unico?.type !== 'image') return false;
+      const { href, title, text } = unico as Tokens.Image;
+      if (!esDiagrama(href)) return false;
+      const pie = title ? `<figcaption>${escapar(title)}</figcaption>` : '';
+      return `<figure class="diagrama"><img src="${escapar(href)}" alt="${escapar(text)}">${pie}</figure>\n`;
     },
     link({ href, title, tokens }) {
       const texto = this.parser.parseInline(tokens);
