@@ -67,3 +67,24 @@ export const renderMarkdown = (md: string): Promise<string> =>
 
 export const renderInline = (md: string): Promise<string> =>
   marked.parseInline(md) as Promise<string>;
+
+const LARGO_DESCRIPCION = 160;
+
+type TokenConTexto = Tokens.Generic & { tokens?: TokenConTexto[]; text?: string };
+
+const textoDeTokens = (tokens: TokenConTexto[]): string =>
+  tokens.map((t) => (t.tokens ? textoDeTokens(t.tokens) : (t.text ?? ''))).join('');
+
+// Texto plano cortado en el último espacio antes del límite, para la meta description y Open Graph.
+export const resumir = (texto: string, largo = LARGO_DESCRIPCION): string => {
+  const limpio = texto.replace(/\s+/g, ' ').trim();
+  if (limpio.length <= largo) return limpio;
+  const corte = limpio.lastIndexOf(' ', largo - 1);
+  return `${limpio.slice(0, corte > 0 ? corte : largo - 1).replace(/[\s,;:.]+$/, '')}…`;
+};
+
+// El primer párrafo del Markdown como texto plano (sin marcas de código, negrita ni enlaces).
+export const primerParrafo = (md: string): string => {
+  const parrafo = marked.lexer(md).find((t) => t.type === 'paragraph') as TokenConTexto | undefined;
+  return parrafo ? textoDeTokens(parrafo.tokens ?? []) : '';
+};

@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /RSC/
+Allow: /
+
+Sitemap: https://bebiendoembebidos.vercel.app/sitemap-index.xml

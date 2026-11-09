@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import { tituloDePagina } from '../lib/seo';
+---
+
+<Base titulo={tituloDePagina('Página no encontrada')} descripcion="Esta página no existe en el roadmap.">
+  <h1 class="text-2xl font-semibold tracking-tight text-ink">Esta página no existe</h1>
+  <p class="mt-3 text-ink/70">Puede que la lección haya cambiado de nombre o que la dirección tenga un error.</p>
+  <a href="/" class="mt-6 inline-block text-accent hover:underline">Volver al inicio</a>
+</Base>

@@ -1,0 +1,14 @@
+---
+import { toSentenceCase } from '../lib/format';
+
+type Props = { level: string };
+
+const { level } = Astro.props;
+const classes = level.startsWith('ESTUDIAR')
+  ? 'border-accent/30 bg-accent/10 text-accent'
+  : 'border-ink/18 bg-transparent text-ink/64';
+---
+
+<span class={`inline-block shrink-0 rounded-full border px-2.5 py-0.5 text-xs font-medium ${classes}`}>
+  {toSentenceCase(level)}
+</span>
