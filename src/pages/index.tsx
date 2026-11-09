@@ -5,7 +5,7 @@ import { LevelBadge } from '../components/level-badge';
 export default async function HomePage() {
   return (
     <div>
-      <title>Roadmap Arduino / ESP32 / Backend</title>
+      <title>Bebiendo Embebidos</title>
 
       <h1 className="text-3xl font-semibold tracking-tight text-ink">
         Roadmap: Arduino, ESP32, C++ y backend para varias organizaciones

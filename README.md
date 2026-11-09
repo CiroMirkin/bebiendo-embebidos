@@ -1,4 +1,4 @@
-# Roadmap Arduino / ESP32 / Backend
+# Bebiendo Embebidos
 
 Sitio estático hecho con [Waku](https://github.com/wakujs/waku) para aprender a construir un sistema de equipos conectados de punta a punta: C++ para firmware, Arduino y ESP32, arquitectura de firmware, conectividad, y un backend en Node, Express y PostgreSQL para varias organizaciones.
 
