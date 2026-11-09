@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus SPI del controlador</title>
+  <!-- Fuente de public/images/diagramas/0-7-bus-spi.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/0-7-bus-spi.html public/images/diagramas/0-7-bus-spi.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 640px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 332" role="img" aria-labelledby="d0-7-bus-spi-title d0-7-bus-spi-desc">
+  <title id="d0-7-bus-spi-title">Bus SPI del controlador</title>
+  <desc id="d0-7-bus-spi-desc">SCK, MOSI y MISO son compartidos por la tarjeta microSD y otro dispositivo; cada uno tiene su propia línea CS, y el ESP32 baja a LOW solo la del dispositivo con el que habla.</desc>
+  <defs>
+    <marker id="d0-7-bus-spi-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="d0-7-bus-spi-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="332" fill="#fffcf0"/>
+  <path d="M160 96 H552" fill="none" stroke="#205ea6" stroke-width="6"/>
+  <path d="M344 96 V152" fill="none" stroke="#205ea6" stroke-width="6"/>
+  <path d="M536 96 V152" fill="none" stroke="#205ea6" stroke-width="6"/>
+  <text x="376" y="84" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#205ea6" text-anchor="middle">SCK · MOSI · MISO: compartidos</text>
+  <path d="M160 240 H296 Q304 240 304 232 V216" fill="none" stroke="#bc5215" stroke-width="2"/>
+  <path d="M160 264 H488 Q496 264 496 256 V216" fill="none" stroke="#bc5215" stroke-width="2"/>
+  <text x="176" y="232" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#bc5215" text-anchor="start">CS de la SD</text>
+  <text x="320" y="256" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#bc5215" text-anchor="start">CS del otro</text>
+  <rect x="16" y="48" width="144" height="240" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="32" y="172" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#100f0f" text-anchor="start">ESP32-S3</text>
+  <text x="32" y="190" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">maestro</text>
+  <text x="148" y="80" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">SCK 12</text>
+  <text x="148" y="100" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">MOSI 11</text>
+  <text x="148" y="120" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">MISO 13</text>
+  <text x="148" y="244" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">CS 10</text>
+  <text x="148" y="268" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">CS otro</text>
+  <rect x="264" y="152" width="160" height="64" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="344.0" y="181.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">tarjeta microSD</text>
+<text x="344.0" y="199.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">CS en GPIO 10</text>
+  <rect x="456" y="152" width="160" height="64" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+<text x="536.0" y="181.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">otro dispositivo</text>
+<text x="536.0" y="199.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">su propio CS</text>
+  <text x="320" y="316" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">en reposo cada CS está en HIGH; el ESP32 baja a LOW solo el del dispositivo con el que habla</text>
+</svg>
+</div>
+</main>
+</body>
+</html>
