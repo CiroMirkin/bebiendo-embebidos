@@ -61,6 +61,7 @@ Los ejemplos de "Mal:" que usan un pin incorrecto a propósito (strapping, ADC2,
 | LED | 2 |
 | I2C SDA / SCL (SHT31) | 21 / 22 |
 | Llave del sensor de suelo (P-MOSFET; bajo = prendido) | 25 |
+| Llave del sensor de luz (P-MOSFET; bajo = prendido), del ejercicio de la E.2 | 26 |
 | Botón para despertar (RTC GPIO, ext0) | 27 |
 | Luz, fotorresistencia (ADC1) | 33 |
 | Humedad del suelo (ADC1); un segundo sensor en el 32 | 34 |
