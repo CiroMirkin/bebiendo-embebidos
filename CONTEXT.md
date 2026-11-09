@@ -1,6 +1,6 @@
 # Contexto: el sistema del invernadero
 
-Todas las lecciones usan el mismo ejemplo ficticio: un sistema de control de invernaderos. Este archivo reúne el dominio y los valores que ya aparecen en los ejemplos, para que las lecciones nuevas o corregidas sigan siendo consistentes. Nunca se usa el proyecto real del autor: ni nombres de archivos, clases, hardware, endpoints ni cifras.
+El ejemplo principal de las lecciones es ficticio: un sistema de control de invernaderos. No todas las lecciones tienen que tratar sobre el invernadero: si forzarlo perjudica la lección, se usa otro ejemplo. Este archivo reúne el dominio y los valores que ya aparecen en los ejemplos, para que las lecciones que sí lo usan sigan siendo consistentes. Nunca se usa el proyecto real del autor: ni nombres de archivos, clases, hardware, endpoints ni cifras.
 
 Audiencia: sabe programar en algún lenguaje, no sabe C++.
 
