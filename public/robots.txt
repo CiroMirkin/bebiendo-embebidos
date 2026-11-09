@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arduino-roadmap.example/sitemap-index.xml
+Sitemap: https://bebiendoembebidos.vercel.app/sitemap-index.xml

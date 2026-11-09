@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  // Dominio provisorio: cambiarlo por el de producción antes de publicar (canónica, sitemap y Open Graph salen de acá).
-  site: 'https://arduino-roadmap.example',
+  // Canónica, sitemap y Open Graph salen de acá.
+  site: 'https://bebiendoembebidos.vercel.app',
   trailingSlash: 'never',
   // /conceptos/0-1 se genera como conceptos/0-1.html, que los hostings estáticos sirven sin extensión.
   build: { format: 'file' },
