@@ -1,0 +1,20 @@
+* Encendido del sensor de suelo (lección e-6): pico de corriente y caída de los 3,3 V
+* Uso: ngspice -b arranque-sensor.cir
+* Cambiar RG y CGD para comparar el encendido brusco con el arranque suave.
+V33 vreg 0 DC 3.3
+RREG vreg v33 0.3             ; resistencia supuesta del regulador y las pistas
+M1 sens gate v33 PAO3401
+R1 v33 gate 100k
+VG gpio 0 PULSE(3.3 0 1m 1u 1u 50m 100m)   ; el GPIO 25 baja a 1 ms
+RG gpio gate 10k
+CGD gate sens 47n             ; arranque suave; borrar esta línea para ver el encendido brusco
+RL sens 0 660                 ; consumo del sensor
+CS sens 0 10u                 ; capacitor de entrada del sensor
+.model PAO3401 VDMOS pchan Vto=-0.9 Kp=20 Rd=0.03 Rs=0.01 Cgs=900p Cgdmax=300p Cgdmin=80p
+.control
+tran 0.1u 5m
+meas tran ipico min i(V33) from=0.9m to=4m
+meas tran v33min min v(v33) from=0.9m to=4m
+meas tran t90 when v(sens)=2.97 rise=1
+.endc
+.end

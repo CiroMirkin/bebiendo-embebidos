@@ -16,7 +16,7 @@ const conceptos = defineCollection({
     id: z.string(),
     parte: z.enum(getAllPartSlugs() as [string, ...string[]]),
     titulo: z.string(),
-    nivel: z.enum(['ESTUDIAR', 'CONOCER']),
+    nivel: z.enum(['ESTUDIAR', 'CONOCER', 'PROFUNDIZAR']),
     relacionado: z.string().optional(),
     // Resumen para buscadores; si falta, se usa el primer párrafo de la lección.
     descripcion: z.string().optional(),

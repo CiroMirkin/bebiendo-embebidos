@@ -11,7 +11,7 @@ export type Quiz = {
   options: QuizOption[];
 };
 
-type Level = 'ESTUDIAR' | 'CONOCER';
+type Level = 'ESTUDIAR' | 'CONOCER' | 'PROFUNDIZAR';
 
 export type Concept = {
   id: string;

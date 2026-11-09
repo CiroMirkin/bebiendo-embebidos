@@ -2,14 +2,15 @@
 
 Sitio estático hecho con [Astro](https://astro.build) para aprender a construir un sistema de equipos conectados de punta a punta: C++ para firmware, Arduino y ESP32, arquitectura de firmware, conectividad, y un backend en Node, Express y PostgreSQL para varias organizaciones.
 
-Todas las lecciones usan el mismo ejemplo: el control de un invernadero, con nodos sensores a batería (BLE, deep sleep), un controlador ESP32-S3 que maneja el riego y la ventilación, y un backend donde cada productor tiene sus invernaderos, equipos y usuarios con roles.
+Casi todas las lecciones usan el mismo ejemplo: el control de un invernadero, con nodos sensores a batería (BLE, deep sleep), un controlador ESP32-S3 que maneja el riego y la ventilación, y un backend donde cada productor tiene sus invernaderos, equipos y usuarios con roles.
 
 ## Contenido
 
-- 11 partes: la Base (C++), la Parte 0 (Arduino y ESP32) y las Partes 1 a 9.
-- 74 lecciones (`/conceptos/<slug>`), de dos tipos:
+- 12 partes: la Base (C++), la Parte 0 (Arduino y ESP32), Electrónica y las Partes 1 a 9.
+- 81 lecciones (`/conceptos/<slug>`), de tres tipos:
   - ESTUDIAR: idea central, por qué te importa, paso a paso, tres o más ejemplos, errores comunes, un ejercicio con pista y solución, un quiz de cuatro preguntas y un resumen.
   - CONOCER: una versión más liviana, con cómo funciona, uno o dos ejemplos, cuándo conviene y cuándo no, y un quiz de dos preguntas.
+  - PROFUNDIZAR: la misma estructura que ESTUDIAR, para temas opcionales que hacen falta recién cuando armás hardware propio (la parte Electrónica).
 
 ## Cómo correrlo
 
@@ -49,7 +50,7 @@ src/
   components/
     quiz.tsx                quiz interactivo (isla de React, client:visible)
     InlineMd.astro          títulos con `código` en listas y navegación
-    LevelBadge.astro        ESTUDIAR / CONOCER
+    LevelBadge.astro        ESTUDIAR / CONOCER / PROFUNDIZAR
   pages/
     index.astro             listado de las partes
     partes/[part].astro     conceptos de una parte

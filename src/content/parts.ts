@@ -27,6 +27,25 @@ export const parts: Part[] = [
       'Cómo funcionan Arduino y el ESP32: setup y loop, memorias, GPIO, ADC, PWM, UART, I2C, SPI, interrupciones, BLE, WiFi, NVS, deep sleep, librerías y bus CAN.',
   },
   {
+    slug: 'electronica',
+    number: 0.5,
+    label: 'Electrónica',
+    title: 'Electrónica para firmware',
+    level: 'PROFUNDIZAR, cuando armes hardware propio',
+    description:
+      'Electrónica para firmware: transistores como interruptores, llaves de alimentación, fuente y fusibles, USB host en el ESP32-S3, tester, ngspice y banco.',
+    sources: [
+      { label: 'Hoja de datos del BC547 (onsemi)', url: 'https://www.onsemi.com/download/data-sheet/pdf/bc550-d.pdf' },
+      {
+        label: 'Hoja de datos del AO3401 (Alpha & Omega)',
+        url: 'https://docs.ampnuts.ru/eevblog.docs/_Datasheets/ALPHA_OMEGA/ao3401.pdf',
+      },
+      { label: 'ESP-USB: USB Host en el ESP32-S3 (Espressif)', url: 'https://docs.espressif.com/projects/esp-usb/en/latest/esp32s3/usb_host.html' },
+      { label: 'TinyUSB', url: 'https://docs.tinyusb.org/en/latest/reference/architecture.html' },
+      { label: 'Manual de ngspice', url: 'https://ngspice.sourceforge.io/docs.html' },
+    ],
+  },
+  {
     slug: 'parte-1',
     number: 1,
     title: 'C++ aplicado a firmware',

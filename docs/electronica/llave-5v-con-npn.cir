@@ -1,0 +1,16 @@
+* Llave de 5 V con P-MOSFET y NPN (lecciones e-2 y e-4): GPIO en alto = carga prendida
+V5 v5 0 DC 5
+M1 out gate v5 PAO3401
+R1 v5 gate 10k                ; pull-up del gate
+Q2 gate b 0 QBC547            ; colector base emisor
+R2 gpio b 4.7k                ; resistencia de base
+R3 b 0 47k                    ; base a masa: apagado si el GPIO flota
+VG gpio 0 DC 0
+RL out 0 50                   ; carga de 100 mA
+.model PAO3401 VDMOS pchan Vto=-0.9 Kp=20 Rd=0.03 Rs=0.01 Cgs=900p Cgdmax=300p Cgdmin=80p
+.model QBC547 NPN(IS=2.4e-14 BF=290 VAF=63 RB=1 RE=0.47 RC=0.85)
+.control
+dc VG 0 3.3 3.3
+print v(out) v(gate) v(b) i(VG)
+.endc
+.end
