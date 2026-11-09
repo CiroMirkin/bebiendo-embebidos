@@ -1,4 +1,4 @@
-# Roadmap Arduino / ESP32 / Backend
+# Bebiendo Embebidos
 
 Sitio estático hecho con [Astro](https://astro.build) para aprender a construir un sistema de equipos conectados de punta a punta: C++ para firmware, Arduino y ESP32, arquitectura de firmware, conectividad, y un backend en Node, Express y PostgreSQL para varias organizaciones.
 
@@ -7,7 +7,7 @@ Todas las lecciones usan el mismo ejemplo: el control de un invernadero, con nod
 ## Contenido
 
 - 11 partes: la Base (C++), la Parte 0 (Arduino y ESP32) y las Partes 1 a 9.
-- 73 lecciones (`/conceptos/<slug>`), de dos tipos:
+- 74 lecciones (`/conceptos/<slug>`), de dos tipos:
   - ESTUDIAR: idea central, por qué te importa, paso a paso, tres o más ejemplos, errores comunes, un ejercicio con pista y solución, un quiz de cuatro preguntas y un resumen.
   - CONOCER: una versión más liviana, con cómo funciona, uno o dos ejemplos, cuándo conviene y cuándo no, y un quiz de dos preguntas.
 

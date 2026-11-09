@@ -1,5 +1,5 @@
-export const NOMBRE_SITIO = 'Roadmap Arduino / ESP32 / Backend';
-const SUFIJO_TITULO = 'Roadmap Arduino / ESP32';
+export const NOMBRE_SITIO = 'Bebiendo Embebidos';
+const SUFIJO_TITULO = 'Bebiendo Embebidos';
 
 export const DESCRIPCION_SITIO =
   'Roadmap de Arduino, ESP32, C++ y arquitectura de backend multi-organización, con ejemplos de código y quiz por concepto.';
