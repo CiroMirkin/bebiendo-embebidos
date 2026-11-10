@@ -74,7 +74,7 @@ Los ejemplos de "Mal:" que usan un pin incorrecto a propósito (strapping, ADC2,
 - **Buzzer de alarma**: 12 V y 30 mA, con un BC547 del lado bajo en el GPIO 2 del controlador (R de base 680 Ω, 47 kΩ de base a masa).
 - **Llave del sensor de suelo del nodo**: AO3401 con el source en 3,3 V, pull-up de 100 kΩ en el gate, 10 kΩ al GPIO 25 y 47 nF entre gate y drain (arranque suave). El sensor consume unos 5 mA, tiene 10 µF en su entrada y se estabiliza en alrededor de 1 s (`ESTABILIZACION_MS = 1000`, a confirmar en banco).
 - **Llave de 5 V**: AO3401 con pull-up de 10 kΩ, BC547 con 4,7 kΩ de base y 47 kΩ de base a masa (alto = prendido), fusible rearmable de 0,25 A y 100 µF a la salida.
-- **Simulaciones y esquemáticos**: en `docs/electronica/` (netlists de ngspice y `diagramas.py`, que genera los SVG de `public/images/`). Los modelos de los transistores son genéricos, y el regulador del nodo se supone de 0,3 Ω.
+- **Simulaciones y esquemáticos**: las netlists de ngspice están en `docs/electronica/`. Los esquemáticos son diagramas como los de la parte 0: HTML fuente en `docs/diagramas/e-N-nombre.html` y SVG en `public/images/diagramas/`. Los modelos de los transistores son genéricos, y el regulador del nodo se supone de 0,3 Ω.
 
 ## Otro ejemplo: el control de acceso del taller
 
