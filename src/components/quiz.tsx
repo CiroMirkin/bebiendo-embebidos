@@ -23,7 +23,7 @@ export const QuizCard = ({ quiz, numero, total }: QuizProps) => {
 
   const optionClasses = (index: number, correct: boolean) => {
     if (!answered) {
-      return 'border-ink/14 bg-surface hover:border-accent/40 hover:bg-accent/5';
+      return 'border-ink/15 bg-surface hover:border-accent/50 hover:bg-accent/5';
     }
     if (index === selected && correct) {
       return 'border-success/50 bg-success/10';
@@ -39,12 +39,12 @@ export const QuizCard = ({ quiz, numero, total }: QuizProps) => {
   };
 
   return (
-    <div className="my-6 rounded-xl border border-ink/12 bg-code-bg/40 p-5">
-      <div className="mb-3 flex items-center gap-2">
-        <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium text-canvas">
+    <div className="my-6 max-w-[46rem] rounded-xl border border-line bg-code-bg/50 p-4 sm:p-5">
+      <div className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1">
+        <span className="rounded-full bg-accent-strong px-2.5 py-0.5 text-xs font-medium text-canvas">
           {total > 1 ? `Pregunta ${numero} de ${total}` : 'Quiz'}
         </span>
-        <span className="text-xs text-ink/44">
+        <span className="text-xs text-muted">
           Elegí una opción para ver si es correcta
         </span>
       </div>
@@ -61,7 +61,7 @@ export const QuizCard = ({ quiz, numero, total }: QuizProps) => {
             type="button"
             onClick={() => setSelected(index)}
             disabled={answered}
-            className={`leccion rounded-lg border px-4 py-3 text-left text-sm transition-colors ${optionClasses(
+            className={`leccion rounded-lg border px-4 py-3 text-left text-sm leading-relaxed transition-colors ${optionClasses(
               index,
               option.correct,
             )} ${answered ? 'cursor-default' : 'cursor-pointer'}`}
