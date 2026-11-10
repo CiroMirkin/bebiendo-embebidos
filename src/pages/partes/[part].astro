@@ -13,6 +13,10 @@ export const getStaticPaths = () =>
 const part = getPartBySlug(Astro.params.part) as Part;
 const concepts = await getConceptsByPart(part.slug);
 const titulo = partFullTitle(part);
+// Nivel más común entre las lecciones: solo se muestra el que difiere.
+const conteo = new Map<string, number>();
+for (const c of concepts) conteo.set(c.level, (conteo.get(c.level) ?? 0) + 1);
+const habitual = [...conteo.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
 const jsonLd = [
   migas([
     { nombre: 'Inicio', url: new URL('/', Astro.site) },
@@ -22,51 +26,53 @@ const jsonLd = [
 ---
 
 <Base titulo={tituloDePagina(titulo)} descripcion={resumir(part.description)} jsonLd={jsonLd}>
-  <a href="/" class="text-sm text-accent-strong hover:underline">Todas las partes</a>
+  <div class="mx-auto max-w-[56rem]">
+    <a href="/" class="text-sm text-accent-strong hover:underline">Todas las partes</a>
 
-  <div class="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-4">
-    <div>
-      <h1 class="text-3xl font-semibold leading-tight tracking-tight text-ink">
-        {part.title.startsWith(partLabel(part)) ? part.title : <><span aria-hidden="true" class="mr-2 font-mono text-xl font-medium text-muted">{partLabel(part)}</span>{part.title}</>}
-      </h1>
-    </div>
-    <LevelBadge level={part.level} />
-  </div>
+    <h1 class="serif mt-6 text-4xl font-semibold leading-[1.12] tracking-tight text-ink sm:text-5xl">
+      {part.title.startsWith(partLabel(part)) ? part.title : <><span aria-hidden="true" class="mr-3 text-muted">{partLabel(part)}</span>{part.title}</>}
+    </h1>
+    <p class="mt-3 text-xs text-muted">
+      {concepts.length} {concepts.length === 1 ? 'lección' : 'lecciones'}. <LevelBadge level={part.level} etiqueta />
+    </p>
 
-  <p class="mt-4 max-w-prose text-lg leading-relaxed text-ink/80">{part.description}</p>
+    <p class="serif mt-6 text-xl leading-relaxed text-ink/85">{part.description}</p>
 
-  {
-    part.sources && part.sources.length > 0 && (
-      <p class="mt-2 text-sm text-muted">
-        Fuente:{' '}
-        {part.sources.map((s, i) => (
-          <span>
-            {i > 0 && ', '}
-            <a href={s.url} target="_blank" rel="noreferrer" class="underline underline-offset-2 hover:text-ink">
-              {s.label}
-            </a>
-          </span>
-        ))}
-      </p>
-    )
-  }
-
-  <div class="mt-10 flex flex-col">
     {
-      concepts.map((concept, i) => (
-        <a
-          href={`/conceptos/${concept.slug}`}
-          class={`flex items-center justify-between gap-4 py-3.5 transition-colors hover:bg-ink/[0.03] ${i > 0 ? 'border-t border-line' : ''}`}
-        >
-          <span class="text-ink/80">
-            <span class="mr-2 font-mono text-sm text-muted">{concept.id}</span>
-            <InlineMd texto={concept.title} />
-          </span>
-          <span class="shrink-0">
-            <LevelBadge level={concept.level} />
-          </span>
-        </a>
-      ))
+      part.sources && part.sources.length > 0 && (
+        <p class="mt-3 text-sm text-muted">
+          Fuente:{' '}
+          {part.sources.map((s, i) => (
+            <span>
+              {i > 0 && ', '}
+              <a href={s.url} target="_blank" rel="noreferrer" class="underline underline-offset-2 hover:text-ink">
+                {s.label}
+              </a>
+            </span>
+          ))}
+        </p>
+      )
     }
+
+    <ol class="mt-10 border-b border-line">
+      {
+        concepts.map((concept) => (
+          <li class="border-t border-line">
+            <a
+              href={`/conceptos/${concept.slug}`}
+              class="grid grid-cols-[3rem_1fr] items-baseline gap-x-3 py-3 transition-colors hover:bg-ink/[0.03] sm:grid-cols-[3.5rem_1fr_auto] sm:gap-x-4"
+            >
+              <span class="serif text-base tabular-nums text-muted">{concept.id}</span>
+              <span class="serif text-lg leading-snug text-ink">
+                <InlineMd texto={concept.title} />
+              </span>
+              <span class="col-start-2 sm:col-start-3">
+                <LevelBadge level={concept.level} habitual={habitual} />
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
   </div>
 </Base>

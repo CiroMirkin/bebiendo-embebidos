@@ -1,14 +1,18 @@
 ---
 import { toSentenceCase } from '../lib/format';
 
-type Props = { level: string };
+// Texto pequeño y discreto. Con `habitual`, solo aparece si el nivel difiere del de la parte.
+type Props = { level: string; habitual?: string; etiqueta?: boolean };
 
-const { level } = Astro.props;
-const classes = level.startsWith('ESTUDIAR')
-  ? 'border-accent/30 bg-accent/10 text-accent-strong'
-  : 'border-ink/20 bg-transparent text-muted';
+const { level, habitual, etiqueta = false } = Astro.props;
+const visible = habitual === undefined || habitual !== level;
+const texto = toSentenceCase(level);
 ---
 
-<span class={`inline-block shrink-0 whitespace-nowrap rounded-full border px-2.5 py-0.5 text-xs font-medium ${classes}`}>
-  {toSentenceCase(level)}
-</span>
+{
+  visible && (
+    <span class="whitespace-nowrap font-sans text-xs text-muted">
+      {etiqueta ? `Nivel: ${texto.toLowerCase()}` : texto}
+    </span>
+  )
+}

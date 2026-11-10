@@ -4,7 +4,7 @@ import LevelBadge from '../../components/LevelBadge.astro';
 import { QuizCard, type QuizRenderizado } from '../../components/quiz';
 import Base from '../../layouts/Base.astro';
 import { getAllConcepts, getConceptBySlug, getConceptsByPart, type Concept, type Quiz } from '../../content/concepts';
-import { getPartBySlug, partFullTitle, type Part } from '../../content/parts';
+import { getPartBySlug, partFullTitle, partLabel, type Part } from '../../content/parts';
 import { textoPlano } from '../../lib/format';
 import { primerParrafo, renderInline, renderMarkdown, resumir } from '../../lib/markdown';
 import { migas, tituloDePagina, urlDePagina } from '../../lib/seo';
@@ -67,24 +67,24 @@ const jsonLd = [
 ---
 
 <Base titulo={tituloDePagina(nombre)} descripcion={descripcion} tipo="article" jsonLd={jsonLd}>
-  <a href={`/partes/${concept.partSlug}`} class="text-sm text-accent-strong hover:underline">
-    {partFullTitle(part)}
-  </a>
-
-  <div class="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-4">
-    <h1 class="leccion-titulo text-3xl font-semibold leading-tight tracking-tight text-ink">
-      <span class="mr-2 font-mono text-muted">{concept.id}</span>
+  <div class="mx-auto max-w-[60rem]">
+  <header class="border-t border-ink pt-3">
+    <p class="text-sm text-muted">
+      <a href={`/partes/${concept.partSlug}`} class="text-accent-strong hover:underline">{partLabel(part)}</a>, lección {index + 1} de {siblings.length}
+    </p>
+    <h1 class="leccion-titulo serif mt-5 text-4xl font-semibold leading-[1.12] tracking-tight text-ink sm:text-5xl">
+      <span class="mr-3 text-muted">{concept.id}</span>
       <InlineMd texto={concept.title} />
     </h1>
-    <LevelBadge level={concept.level} />
-  </div>
+    <p class="mt-4"><LevelBadge level={concept.level} etiqueta /></p>
+  </header>
 
-  <div class="leccion mt-8" set:html={htmlAntes} />
+  <div class="leccion mt-10" set:html={htmlAntes} />
 
   {
     quizzes.length > 0 && (
-      <div class="mt-12 max-w-[46rem]">
-        <h2 class="text-2xl font-semibold tracking-tight text-ink">Comprobá lo que entendiste</h2>
+      <div class="mt-14">
+        <h2 class="serif text-2xl font-semibold tracking-tight text-ink">Comprobá lo que entendiste</h2>
         {quizzes.map((quiz, i) => (
           <QuizCard client:visible quiz={quiz} numero={i + 1} total={quizzes.length} />
         ))}
@@ -96,7 +96,7 @@ const jsonLd = [
 
   {
     relacionado && (
-      <p class="mt-10 max-w-[46rem] rounded-xl border border-line bg-surface px-5 py-4 text-sm text-muted">
+      <p class="serif mt-10 border-t border-line pt-4 text-base text-muted">
         Para profundizar:{' '}
         <a href={`/conceptos/${relacionado.slug}`} class="text-accent-strong hover:underline">
           {relacionado.id} <InlineMd texto={relacionado.title} /> {'->'}
@@ -126,5 +126,6 @@ const jsonLd = [
         <span />
       )
     }
+  </div>
   </div>
 </Base>
