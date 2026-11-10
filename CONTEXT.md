@@ -69,12 +69,15 @@ Los ejemplos de "Mal:" que usan un pin incorrecto a propósito (strapping, ADC2,
 
 ## Electrónica (parte E)
 
+- **Enfoque de las lecciones**: la audiencia es alguien que sabe programar y tiene un ESP32 o un Arduino, pero no sabe nada de electrónica. Cada concepto se ata a algo que el lector ya hace con su placa (prender un LED, leer un botón). Nada se da por sabido si no está en la E.0 o en una lección anterior. Cada circuito va con un diagrama, y los que cambian de estado (transistores, llaves, arranques) van paso a paso. Los diagramas siguen el flujo y el estilo de los de la parte 0: HTML fuente en `docs/diagramas/` y SVG en `public/images/diagramas/`.
+- **LED del nodo (E.0)**: LED rojo en el GPIO 2, con una resistencia de 330 Ω en serie. Cae unos 2 V, la resistencia se queda con 1,3 V y la corriente es de unos 3,9 mA. Con 5 V (Arduino UNO) la misma resistencia da unos 9 mA.
+- **Botón del nodo (E.0)**: entre el GPIO 27 y GND, con `INPUT_PULLUP`.
 - **Fuente del controlador**: 12 V y 5 A, fusible lento de 4 A, Schottky en serie, 470 µF y 100 nF en la entrada, step-down de 12 V a 5 V para la placa y 100 µF a su salida. Las luces de cultivo tienen su propia fuente.
 - **Consumos a 12 V**: bomba 1,2 A (hasta unos 5 A al arrancar), ventilador 0,3 A, motor de la cortina 0,8 A (hasta unos 3 A al arrancar). Placa, pantalla, relés y sensores: 0,25 A a 5 V.
 - **Buzzer de alarma**: 12 V y 30 mA, con un BC547 del lado bajo en el GPIO 2 del controlador (R de base 680 Ω, 47 kΩ de base a masa).
 - **Llave del sensor de suelo del nodo**: AO3401 con el source en 3,3 V, pull-up de 100 kΩ en el gate, 10 kΩ al GPIO 25 y 47 nF entre gate y drain (arranque suave). El sensor consume unos 5 mA, tiene 10 µF en su entrada y se estabiliza en alrededor de 1 s (`ESTABILIZACION_MS = 1000`, a confirmar en banco).
 - **Llave de 5 V**: AO3401 con pull-up de 10 kΩ, BC547 con 4,7 kΩ de base y 47 kΩ de base a masa (alto = prendido), fusible rearmable de 0,25 A y 100 µF a la salida.
-- **Simulaciones y esquemáticos**: en `docs/electronica/` (netlists de ngspice y `diagramas.py`, que genera los SVG de `public/images/`). Los modelos de los transistores son genéricos, y el regulador del nodo se supone de 0,3 Ω.
+- **Simulaciones y esquemáticos**: las netlists de ngspice están en `docs/electronica/`. Los esquemáticos son diagramas como los de la parte 0: HTML fuente en `docs/diagramas/e-N-nombre.html` y SVG en `public/images/diagramas/`. Los modelos de los transistores son genéricos, y el regulador del nodo se supone de 0,3 Ω.
 
 ## Otro ejemplo: el control de acceso del taller
 

@@ -21,6 +21,7 @@ const imagen = new URL('/images/og.png', Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fffcf0" />
     <meta name="google-site-verification" content="d3wAK9U-HAs1sV3hApwtn9Xjhv1wZQdyu5QZr4fXdWQ" />
     <title>{titulo}</title>
     <meta name="description" content={descripcion} />
@@ -48,9 +49,14 @@ const imagen = new URL('/images/og.png', Astro.site);
     {jsonLd.map((datos) => <script type="application/ld+json" set:html={serializarJsonLd(datos)} />)}
   </head>
   <body class="bg-canvas">
-    <div class="min-h-svh bg-canvas font-sans text-ink/90">
+    <div class="flex min-h-svh flex-col bg-canvas font-sans text-ink/90">
+      <a
+        href="#contenido"
+        class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-20 focus:rounded-sm focus:bg-ink focus:px-4 focus:py-2 focus:text-canvas"
+        >Saltar al contenido</a
+      >
       <Header />
-      <main class="mx-auto max-w-4xl px-6 py-10">
+      <main id="contenido" class="mx-auto w-full max-w-6xl flex-1 px-5 py-10 sm:px-6 sm:py-14">
         <slot />
       </main>
       <Footer />

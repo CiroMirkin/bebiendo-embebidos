@@ -1,0 +1,39 @@
+---
+import { getConceptsByPart } from '../content/concepts';
+import { parts } from '../content/parts';
+
+// Índice de capítulos: filete, título y descripción corta, sin marcador de número.
+type Props = { slugs: string[] };
+
+const { slugs } = Astro.props;
+const capitulos = await Promise.all(
+  slugs.map(async (slug) => {
+    const part = parts.find((p) => p.slug === slug)!;
+    const lecciones = await getConceptsByPart(slug);
+    return { part, lecciones: lecciones.length };
+  }),
+);
+---
+
+<ol class="border-b border-line">
+  {
+    capitulos.map(({ part, lecciones }) => (
+      <li class="border-t border-line">
+        <a
+          href={`/partes/${part.slug}`}
+          class="group block py-4 transition-colors hover:bg-ink/[0.03]"
+        >
+          <span>
+            <span class="serif block text-xl font-semibold leading-snug text-ink group-hover:text-accent-strong">
+              {part.title}
+            </span>
+            <span class="serif mt-1 line-clamp-2 block text-base leading-snug text-ink/70">{part.description}</span>
+            <span class="mt-1.5 block text-xs text-muted">
+              {lecciones} {lecciones === 1 ? 'lección' : 'lecciones'}
+            </span>
+          </span>
+        </a>
+      </li>
+    ))
+  }
+</ol>

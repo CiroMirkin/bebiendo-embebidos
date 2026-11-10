@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El tester y sus tres conexiones</title>
+  <!-- Fuente de public/images/diagramas/e-5-tester-conexiones.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/e-5-tester-conexiones.html public/images/diagramas/e-5-tester-conexiones.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 780px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 560px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 540" role="img" aria-labelledby="de-5-tester-conexiones-title de-5-tester-conexiones-desc">
+  <title id="de-5-tester-conexiones-title">El tester y sus tres conexiones</title>
+  <desc id="de-5-tester-conexiones-desc">Un tester dibujado de frente, con la pantalla, la perilla y los cuatro bornes: COM, V/Ω, mA y 10 A. A la derecha, tres formas de conectarlo. Tensión: en paralelo con la carga, sin abrir el circuito, punta roja en V/Ω. Corriente: en serie, abriendo el cable de alimentación y cerrándolo a través del tester, punta roja en mA. Continuidad: con la placa desenchufada y sin ninguna fuente, entre 3,3 V y masa; si suena, hay un corto.</desc>
+  <defs>
+    <marker id="e-5-tester-conexiones-arra" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+    <marker id="e-5-tester-conexiones-arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#205ea6"/></marker>
+    <marker id="e-5-tester-conexiones-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+  </defs>
+  <rect x="0" y="0" width="780" height="540" fill="#fffcf0"/>
+  <text x="20" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">El tester, de frente</text>
+  <rect x="30" y="40" width="200" height="360" rx="22" fill="#f6e3d3" stroke="#100f0f" stroke-width="2" />
+  <rect x="50" y="60" width="160" height="70" rx="6" fill="#e6e4d9" stroke="#100f0f" stroke-width="1.5" />
+  <text x="196" y="108" font-family="ui-monospace, monospace" font-size="34" font-weight="600" fill="#100f0f" text-anchor="end">3,29</text>
+  <text x="200" y="78" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#6f6e69" text-anchor="end">V</text>
+  <circle cx="130" cy="220" r="58" fill="#ffffff" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="130" cy="220" r="22" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M130 220 L130 172" fill="none" stroke="#bc5215" stroke-width="4" stroke-linecap="round"/>
+  <text x="130" y="160" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">V</text>
+  <text x="76" y="200" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">Ω</text>
+  <text x="70" y="222" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="middle">•))</text>
+  <text x="190" y="200" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="middle">mA</text>
+  <text x="130" y="296" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">A</text>
+  <circle cx="60" cy="344" r="13" fill="#100f0f" stroke="#100f0f" stroke-width="2"/>
+  <circle cx="60" cy="344" r="5" fill="#fffcf0" stroke="none"/>
+  <text x="60" y="372" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#100f0f" text-anchor="middle">COM</text>
+  <circle cx="102" cy="344" r="13" fill="#af3029" stroke="#af3029" stroke-width="2"/>
+  <circle cx="102" cy="344" r="5" fill="#fffcf0" stroke="none"/>
+  <text x="102" y="372" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#100f0f" text-anchor="middle">V/Ω</text>
+  <circle cx="158" cy="344" r="13" fill="#ffffff" stroke="#af3029" stroke-width="2"/>
+  <circle cx="158" cy="344" r="5" fill="#fffcf0" stroke="none"/>
+  <text x="158" y="372" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#100f0f" text-anchor="middle">mA</text>
+  <circle cx="200" cy="344" r="13" fill="#ffffff" stroke="#af3029" stroke-width="2"/>
+  <circle cx="200" cy="344" r="5" fill="#fffcf0" stroke="none"/>
+  <text x="200" y="372" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#100f0f" text-anchor="middle">10 A</text>
+  <path d="M60 357 C60 420 44 424 44 448" fill="none" stroke="#100f0f" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M102 357 C102 420 118 424 118 448" fill="none" stroke="#af3029" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="44" y="466" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="middle">negra</text>
+  <text x="118" y="466" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#af3029" text-anchor="middle">roja</text>
+  <text x="20" y="496" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#bc5215" text-anchor="start">mA y 10 A: entre las puntas</text>
+  <text x="20" y="512" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#bc5215" text-anchor="start">hay casi 0 Ω, es casi un cable</text>
+  <rect x="262" y="20" width="506" height="155" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1" />
+  <text x="276" y="44" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">1. Tensión: en paralelo</text>
+  <text x="754" y="44" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#205ea6" text-anchor="end">sin abrir nada</text>
+  <rect x="262" y="185" width="506" height="155" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1" />
+  <text x="276" y="209" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">2. Corriente: en serie</text>
+  <text x="754" y="209" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#bc5215" text-anchor="end">abrir el cable</text>
+  <rect x="262" y="350" width="506" height="155" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1" />
+  <text x="276" y="374" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">3. Continuidad: sin alimentación</text>
+  <text x="754" y="374" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#af3029" text-anchor="end">todo desenchufado</text>
+  <text x="278" y="78" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="start">3,3 V</text>
+  <path d="M278 88 H488" fill="none" stroke="#100f0f" stroke-width="1.5" />
+  <circle cx="348" cy="88" r="3.5" fill="#100f0f"/>
+  <circle cx="458" cy="88" r="3.5" fill="#100f0f"/>
+  <path d="M348 88 V104" fill="none" stroke="#100f0f" stroke-width="1.5" />
+  <rect x="308" y="104" width="80" height="34" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1" />
+  <text x="348" y="125" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">sensor</text>
+  <path d="M348 138 V154" fill="none" stroke="#100f0f" stroke-width="1.5" />
+  <path d="M278 154 H488" fill="none" stroke="#100f0f" stroke-width="1.5" />
+  <circle cx="348" cy="154" r="3.5" fill="#100f0f"/>
+  <circle cx="458" cy="154" r="3.5" fill="#100f0f"/>
+  <text x="278" y="168" font-family="ui-monospace, monospace" font-size="10" font-weight="400" fill="#6f6e69" text-anchor="start">GND</text>
+  <path d="M458 88 V104" fill="none" stroke="#af3029" stroke-width="2.5" />
+  <rect x="428" y="104" width="60" height="44" rx="6" fill="#f6e3d3" stroke="#100f0f" stroke-width="1.5" />
+  <rect x="434" y="110" width="48" height="18" rx="3" fill="#e6e4d9" stroke="#100f0f" stroke-width="1" />
+  <text x="478" y="124" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="end">3,29</text>
+  <text x="458.0" y="142" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#100f0f" text-anchor="middle">V</text>
+  <path d="M458 148 V154" fill="none" stroke="#100f0f" stroke-width="2.5" />
+  <text x="512" y="86" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">punta roja en V/Ω,</text>
+  <text x="512" y="102" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">negra en COM</text>
+  <text x="512" y="126" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">se apoyan las puntas</text>
+  <text x="512" y="142" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">en dos puntos</text>
+  <text x="512" y="166" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">resistencia de entrada alta</text>
+  <text x="278" y="243" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="start">3,3 V</text>
+  <path d="M278 253 H322" fill="none" stroke="#af3029" stroke-width="2.5" />
+  <rect x="322" y="231" width="60" height="44" rx="6" fill="#f6e3d3" stroke="#100f0f" stroke-width="1.5" />
+  <rect x="328" y="237" width="48" height="18" rx="3" fill="#e6e4d9" stroke="#100f0f" stroke-width="1" />
+  <text x="372" y="251" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="end">5,0</text>
+  <text x="352.0" y="269" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#100f0f" text-anchor="middle">mA</text>
+  <path d="M382 253 H438" fill="none" stroke="#100f0f" stroke-width="2.5" />
+  <path d="M438 253 V269" fill="none" stroke="#100f0f" stroke-width="1.5" />
+  <rect x="398" y="269" width="80" height="34" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1" />
+  <text x="438" y="290" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">sensor</text>
+  <path d="M438 303 V319" fill="none" stroke="#100f0f" stroke-width="1.5" />
+  <path d="M278 319 H488" fill="none" stroke="#100f0f" stroke-width="1.5" />
+  <circle cx="438" cy="319" r="3.5" fill="#100f0f"/>
+  <text x="278" y="333" font-family="ui-monospace, monospace" font-size="10" font-weight="400" fill="#6f6e69" text-anchor="start">GND</text>
+  <text x="512" y="251" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">punta roja en mA,</text>
+  <text x="512" y="267" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">negra en COM</text>
+  <text x="512" y="291" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">toda la corriente del</text>
+  <text x="512" y="307" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">sensor pasa por el tester</text>
+  <text x="512" y="331" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#bc5215" text-anchor="start">al terminar, la roja vuelve a V/Ω</text>
+  <rect x="278" y="390" width="210" height="108" rx="8" fill="#fffcf0" stroke="#6f6e69" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="286" y="406" font-family="ui-monospace, monospace" font-size="10" font-weight="400" fill="#6f6e69" text-anchor="start">placa sin batería ni USB</text>
+  <circle cx="322" cy="450" r="6" fill="#ffffff" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="444" cy="450" r="6" fill="#ffffff" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="322" y="438" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="middle">3,3 V</text>
+  <text x="444" y="438" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="middle">GND</text>
+  <path d="M322 456 V474 H348" fill="none" stroke="#af3029" stroke-width="2.5" />
+  <path d="M444 456 V474 H418" fill="none" stroke="#100f0f" stroke-width="2.5" />
+  <rect x="348" y="454" width="70" height="40" rx="6" fill="#f6e3d3" stroke="#100f0f" stroke-width="1.5" />
+  <rect x="354" y="460" width="58" height="18" rx="3" fill="#e6e4d9" stroke="#100f0f" stroke-width="1" />
+  <text x="408" y="474" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="end">OL</text>
+  <text x="383.0" y="488" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#100f0f" text-anchor="middle">Ω •))</text>
+  <text x="512" y="416" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">punta roja en V/Ω,</text>
+  <text x="512" y="432" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">negra en COM</text>
+  <text x="512" y="456" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#af3029" text-anchor="start">suena = hay un corto</text>
+  <text x="512" y="472" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#205ea6" text-anchor="start">OL = no hay corto, bien</text>
+  <text x="512" y="496" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">un beep corto al principio es normal</text>
+</svg>
+</div>
+</main>
+</body>
+</html>

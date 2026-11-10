@@ -16,69 +16,68 @@ type QuizProps = {
   total: number;
 };
 
+const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F'];
+
 export const QuizCard = ({ quiz, numero, total }: QuizProps) => {
   const [selected, setSelected] = useState<number | null>(null);
 
   const answered = selected !== null;
 
-  const optionClasses = (index: number, correct: boolean) => {
-    if (!answered) {
-      return 'border-ink/14 bg-surface hover:border-accent/40 hover:bg-accent/5';
-    }
-    if (index === selected && correct) {
-      return 'border-success/50 bg-success/10';
-    }
-    if (index === selected && !correct) {
-      return 'border-danger/50 bg-danger/10';
-    }
-    // Si erró, la correcta queda un poco atenuada para compararla con la elegida.
-    if (correct) {
-      return 'border-success/50 bg-success/10 opacity-80';
-    }
-    return 'border-ink/10 bg-surface opacity-60';
+  // Sin respuesta, todo neutro. El color aparece solo en la letra y la nota de la elegida y de la correcta.
+  const letraClasses = (index: number, correct: boolean) => {
+    if (!answered) return 'border-ink/30 text-ink/70';
+    if (correct) return 'border-success bg-success text-canvas';
+    if (index === selected) return 'border-danger bg-danger text-canvas';
+    return 'border-ink/20 text-ink/40';
   };
 
   return (
-    <div className="my-6 rounded-xl border border-ink/12 bg-code-bg/40 p-5">
-      <div className="mb-3 flex items-center gap-2">
-        <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium text-canvas">
-          {total > 1 ? `Pregunta ${numero} de ${total}` : 'Quiz'}
-        </span>
-        <span className="text-xs text-ink/44">
-          Elegí una opción para ver si es correcta
-        </span>
+    <section className="my-6 border border-ink/25 bg-surface">
+      <div className="serif border-b border-line px-4 pb-3 pt-4 sm:px-5">
+        <p className="mb-2 font-sans text-xs text-muted">
+          {total > 1 ? `Pregunta ${numero} de ${total}` : 'Pregunta'}. Elegí una opción para ver si es correcta.
+        </p>
+        <div
+          className="leccion quiz-prompt font-medium text-ink"
+          dangerouslySetInnerHTML={{ __html: quiz.promptHtml }}
+        />
       </div>
 
-      <div
-        className="leccion quiz-prompt mb-4 font-medium text-ink/90"
-        dangerouslySetInnerHTML={{ __html: quiz.promptHtml }}
-      />
-
-      <div className="flex flex-col gap-2">
+      <ul>
         {quiz.options.map((option, index) => (
-          <button
-            key={index}
-            type="button"
-            onClick={() => setSelected(index)}
-            disabled={answered}
-            className={`leccion rounded-lg border px-4 py-3 text-left text-sm transition-colors ${optionClasses(
-              index,
-              option.correct,
-            )} ${answered ? 'cursor-default' : 'cursor-pointer'}`}
-          >
-            <span
-              className="font-medium text-ink/90"
-              dangerouslySetInnerHTML={{ __html: option.textHtml }}
-            />
-            {answered && (index === selected || option.correct) && (
-              <span className="mt-2 block text-sm font-normal text-ink/70">
-                {index !== selected ? 'Esta es la correcta. ' : option.correct ? 'Correcto. ' : 'No es correcto. '}
-                <span dangerouslySetInnerHTML={{ __html: option.explanationHtml }} />
+          <li key={index} className={index > 0 ? 'border-t border-line' : ''}>
+            <button
+              type="button"
+              onClick={() => setSelected(index)}
+              disabled={answered}
+              className={`serif flex w-full gap-3 px-4 py-3 text-left text-base leading-relaxed transition-colors sm:px-5 ${
+                answered ? 'cursor-default' : 'cursor-pointer hover:bg-ink/[0.04]'
+              } ${answered && !option.correct && index !== selected ? 'text-ink/60' : 'text-ink'}`}
+            >
+              <span
+                aria-hidden="true"
+                className={`mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border font-sans text-xs font-medium ${letraClasses(
+                  index,
+                  option.correct,
+                )}`}
+              >
+                {LETRAS[index] ?? index + 1}
               </span>
-            )}
-          </button>
+              <span className="leccion min-w-0">
+                <span dangerouslySetInnerHTML={{ __html: option.textHtml }} />
+                {answered && (index === selected || option.correct) && (
+                  <span
+                    className={`mt-1.5 block text-[0.95rem] ${option.correct ? 'text-success' : 'text-danger'}`}
+                  >
+                    {index !== selected ? 'Esta es la correcta. ' : option.correct ? 'Correcto. ' : 'No es correcto. '}
+                    <span className="text-ink/80" dangerouslySetInnerHTML={{ __html: option.explanationHtml }} />
+                  </span>
+                )}
+              </span>
+            </button>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 };

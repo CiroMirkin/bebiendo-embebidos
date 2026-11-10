@@ -1,8 +1,14 @@
 ---
-import LevelBadge from '../components/LevelBadge.astro';
+import IndiceDePartes from '../components/IndiceDePartes.astro';
 import Base from '../layouts/Base.astro';
-import { partLabel, parts } from '../content/parts';
 import { DESCRIPCION_SITIO, NOMBRE_SITIO } from '../lib/seo';
+
+const grupos = [
+  { nombre: 'Fundamentos', slugs: ['base', 'parte-0', 'electronica'] },
+  { nombre: 'Firmware', slugs: ['parte-1', 'parte-2', 'parte-3'] },
+  { nombre: 'Backend', slugs: ['parte-4', 'parte-5', 'parte-6'] },
+  { nombre: 'Ampliar', slugs: ['parte-7', 'parte-8', 'parte-9'] },
+];
 
 const sitio = {
   '@context': 'https://schema.org',
@@ -15,40 +21,40 @@ const sitio = {
 ---
 
 <Base titulo={NOMBRE_SITIO} descripcion={DESCRIPCION_SITIO} jsonLd={[sitio]}>
-  <h1 class="text-3xl font-semibold tracking-tight text-ink">
-    Roadmap: Arduino, ESP32, C++ y backend para varias organizaciones
-  </h1>
-  <p class="mt-4 text-ink/70">
-    Un recorrido para aprender a construir un sistema completo de equipos
-    conectados, de punta a punta. El ejemplo que atraviesa todas las
-    lecciones es el control de un invernadero: nodos sensores a batería que
-    miden por BLE, un controlador ESP32 que maneja el riego y la
-    ventilación, y un backend en Node y PostgreSQL que atiende a varios
-    productores, cada uno con sus invernaderos y sus usuarios.
-  </p>
-  <p class="mt-3 text-ink/70">
-    Cada concepto es una lección: la idea central, por qué importa, un paso
-    a paso, ejemplos de código, errores comunes, un ejercicio y un quiz para
-    comprobar lo que entendiste. Si sabés programar pero no C++, empezá por
-    la Base y la Parte 0.
-  </p>
+  <header class="mx-auto max-w-[56rem] pt-4 sm:pt-10">
+    <h1 class="serif text-4xl font-semibold leading-[1.12] tracking-tight text-ink sm:text-5xl">
+      Roadmap: Arduino, ESP32, C++ y backend para varias organizaciones
+    </h1>
+    <p class="serif mt-7 text-xl leading-relaxed text-ink/85">
+      Un recorrido para aprender a construir un sistema completo de equipos
+      conectados, de punta a punta. El ejemplo que atraviesa todas las
+      lecciones es el control de un invernadero: nodos sensores a batería que
+      miden por BLE, un controlador ESP32 que maneja el riego y la
+      ventilación, y un backend en Node y PostgreSQL que atiende a varios
+      productores, cada uno con sus invernaderos y sus usuarios.
+    </p>
+    <p class="serif mt-4 text-xl leading-relaxed text-ink/85">
+      Cada concepto es una lección: la idea central, por qué importa, un paso
+      a paso, ejemplos de código, errores comunes, un ejercicio y un quiz para
+      comprobar lo que entendiste.
+    </p>
+    <p class="serif mt-8 border-t border-ink pt-4 text-xl leading-relaxed text-ink">
+      Si sabés programar pero no C++, empezá acá:{' '}
+      <a href="/partes/base" class="text-accent-strong underline decoration-1 underline-offset-4 hover:decoration-2">la Base de C++</a>{' '}
+      y después{' '}
+      <a href="/partes/parte-0" class="text-accent-strong underline decoration-1 underline-offset-4 hover:decoration-2">la Parte 0, Arduino y ESP32</a>.
+    </p>
+  </header>
 
-  <div class="mt-10 flex flex-col gap-3">
+  <div class="mx-auto mt-16 max-w-[56rem]">
     {
-      parts.map((part) => (
-        <a
-          href={`/partes/${part.slug}`}
-          class="block rounded-xl border border-ink/10 bg-surface p-5 transition-colors hover:border-ink/20 hover:bg-ink/[0.02]"
-        >
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <div class="text-xs font-medium text-ink/44">{partLabel(part)}</div>
-              <h2 class="mt-1 text-lg font-semibold text-ink">{part.title}</h2>
-              <p class="mt-1 text-sm text-ink/64">{part.description}</p>
-            </div>
-            <LevelBadge level={part.level} />
-          </div>
-        </a>
+      grupos.map((grupo) => (
+        <section class="mb-12" aria-labelledby={`g-${grupo.nombre}`}>
+          <h2 id={`g-${grupo.nombre}`} class="serif mb-3 text-2xl font-semibold text-ink">
+            {grupo.nombre}
+          </h2>
+          <IndiceDePartes slugs={grupo.slugs} />
+        </section>
       ))
     }
   </div>

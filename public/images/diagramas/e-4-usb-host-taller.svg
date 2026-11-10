@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="de-4-usb-host-taller-title de-4-usb-host-taller-desc" id="e-4-usb-host-taller-root">
+  <title id="de-4-usb-host-taller-title">Conexionado del USB host del taller</title>
+  <desc id="de-4-usb-host-taller-desc">El ESP32-S3 DevKitC-1 une sus GPIO 19 y 20 a D- y D+ de un USB-A hembra y comparte GND. El VBUS sale de una llave de 5 V con fusible rearmable y 100 µF, alimentada por el pin 5V y manejada por el GPIO 5. El GPIO 6 maneja el relé de la cerradura.</desc>
+  <defs>
+      <style>#e-4-usb-host-taller-root { font-family: system-ui, sans-serif; color: #100f0f; }
+      #e-4-usb-host-taller-root .diagram-container { width: 100%; overflow-x: auto; }</style>
+    <marker id="e-4-usb-host-taller-de-4-usb-host-taller-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="e-4-usb-host-taller-de-4-usb-host-taller-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="760" height="340" fill="#fffcf0"/>
+  <rect x="16" y="140" width="100" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="66.0" y="165.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">relé</text>
+  <text x="66.0" y="183.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">cerradura</text>
+  <rect x="156" y="44" width="180" height="260" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="246" y="326" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">ESP32-S3 DevKitC-1</text>
+  <text x="324" y="84" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">GPIO 19 (D-)</text>
+  <text x="324" y="120" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">GPIO 20 (D+)</text>
+  <text x="324" y="172" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">GPIO 5</text>
+  <text x="324" y="212" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">5V</text>
+  <text x="324" y="284" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">GND</text>
+  <text x="168" y="172" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">GPIO 6</text>
+  <path d="M116 168 H156" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="620" y="44" width="120" height="260" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="680" y="326" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">USB-A hembra</text>
+  <text x="632" y="84" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">D-</text>
+  <text x="632" y="120" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">D+</text>
+  <text x="632" y="192" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">VBUS</text>
+  <text x="632" y="284" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="start">GND</text>
+  <path d="M336 80 H620" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M336 116 H620" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M336 280 H620" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M336 168 H405" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M336 208 H405" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M535 188 H620" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="405" y="148" width="130" height="80" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="470.0" y="185.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">llave de 5 V</text>
+  <text x="470.0" y="203.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">fusible y 100 µF</text>
+  <text x="350" y="162" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">control</text>
+  <text x="350" y="226" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">5 V</text>
+  <path d="M470 228 V280" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="470" cy="280" r="3.5" fill="#100f0f"/>
+  <text x="484" y="274" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">GND común</text>
+</svg>
