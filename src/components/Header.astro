@@ -2,11 +2,14 @@
 import { NOMBRE_SITIO } from '../lib/seo';
 ---
 
-<header class="sticky top-0 z-10 border-b border-ink/10 bg-canvas/90 backdrop-blur">
-  <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-    <a href="/" class="font-semibold tracking-tight text-ink">{NOMBRE_SITIO}</a>
-    <nav class="flex gap-4 text-sm text-ink/64">
-      <a href="/" class="hover:text-ink">Inicio</a>
+<header class="sticky top-0 z-10 border-b border-line bg-canvas/90 backdrop-blur">
+  <div class="mx-auto flex max-w-4xl items-center justify-between gap-4 px-5 py-3.5 sm:px-6">
+    <a href="/" class="flex items-center gap-2.5 font-semibold tracking-tight text-ink">
+      <span class="size-2.5 rounded-full bg-accent" aria-hidden="true"></span>
+      {NOMBRE_SITIO}
+    </a>
+    <nav class="flex gap-4 text-sm text-muted" aria-label="Principal">
+      <a href="/" class="py-1 transition-colors hover:text-ink">Inicio</a>
     </nav>
   </div>
 </header>

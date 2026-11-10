@@ -6,6 +6,12 @@
       "sourceType": "github",
       "skillPath": "skills/cpp-pro/SKILL.md",
       "computedHash": "573e4dc3bc80d2a1889aa481af0d65b111c5dc96a15a3bb2b897beb5342b6ea2"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/impeccable/SKILL.md",
+      "computedHash": "20700276239b66f9623687e7b40fff378cfd30c94fb66d8e1f796877e9a23d5d"
     }
   }
 }
