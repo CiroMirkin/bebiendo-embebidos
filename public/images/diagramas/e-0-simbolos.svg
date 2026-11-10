@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="de-0-simbolos-title de-0-simbolos-desc" id="e-0-simbolos-root">
   <title id="de-0-simbolos-title">Símbolos de un esquemático</title>
-  <desc id="de-0-simbolos-desc">Ocho símbolos de esquemático: resistencia, capacitor, diodo, LED, transistor NPN, fuente, masa y cruce de cables. Dos cables que se cruzan con un punto están unidos; sin punto, pasan sin tocarse.</desc>
+  <desc id="de-0-simbolos-desc">Símbolos de esquemático: resistencia, capacitor, diodo, LED, transistor NPN, fuente, masa y cruce de cables. Dos cables que se cruzan con un punto están unidos; sin punto, pasan sin tocarse.</desc>
   <defs>
       <style>#e-0-simbolos-root { font-family: system-ui, sans-serif; color: #100f0f; }
       #e-0-simbolos-root .diagram-container { width: 100%; overflow-x: auto; }</style>

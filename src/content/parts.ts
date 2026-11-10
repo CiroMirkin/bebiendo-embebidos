@@ -31,9 +31,9 @@ export const parts: Part[] = [
     number: 0.5,
     label: 'Electrónica',
     title: 'Electrónica para firmware',
-    level: 'ESTUDIAR la intro si no sabés electrónica; el resto, PROFUNDIZAR cuando armes hardware propio',
+    level: 'ESTUDIAR la intro; el resto, PROFUNDIZAR',
     description:
-      'Electrónica para firmware, sin saber nada de electrónica: intro desde cero, transistores como interruptores, llaves de alimentación, fuente, USB host, tester y banco.',
+      'Electrónica desde cero para firmware: transistores, llaves de alimentación, fuente, USB host, tester, banco y simulación con ngspice.',
     sources: [
       { label: 'Hoja de datos del BC547 (onsemi)', url: 'https://www.onsemi.com/download/data-sheet/pdf/bc550-d.pdf' },
       {
@@ -161,6 +161,10 @@ export const parts: Part[] = [
 ];
 
 export const partLabel = (part: Part) => part.label ?? `Parte ${part.number}`;
+
+/** Etiqueta y título juntos; si el título ya empieza con la etiqueta, solo el título. */
+export const partFullTitle = (part: Part) =>
+  part.title.startsWith(partLabel(part)) ? part.title : `${partLabel(part)}: ${part.title}`;
 
 export const getPartBySlug = (slug: string) => parts.find((p) => p.slug === slug);
 export const getAllPartSlugs = () => parts.map((p) => p.slug);

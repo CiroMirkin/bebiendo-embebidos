@@ -4,7 +4,7 @@ import LevelBadge from '../../components/LevelBadge.astro';
 import { QuizCard, type QuizRenderizado } from '../../components/quiz';
 import Base from '../../layouts/Base.astro';
 import { getAllConcepts, getConceptBySlug, getConceptsByPart, type Concept, type Quiz } from '../../content/concepts';
-import { getPartBySlug, partLabel, type Part } from '../../content/parts';
+import { getPartBySlug, partFullTitle, type Part } from '../../content/parts';
 import { textoPlano } from '../../lib/format';
 import { primerParrafo, renderInline, renderMarkdown, resumir } from '../../lib/markdown';
 import { migas, tituloDePagina, urlDePagina } from '../../lib/seo';
@@ -56,11 +56,11 @@ const jsonLd = [
     url: url.href,
     learningResourceType: 'Lección',
     educationalLevel: concept.level === 'ESTUDIAR' ? 'Estudiar en profundidad' : 'Conocer',
-    isPartOf: { '@type': 'LearningResource', name: `${partLabel(part)}: ${part.title}`, url: urlParte.href },
+    isPartOf: { '@type': 'LearningResource', name: partFullTitle(part), url: urlParte.href },
   },
   migas([
     { nombre: 'Inicio', url: new URL('/', Astro.site) },
-    { nombre: `${partLabel(part)}: ${part.title}`, url: urlParte },
+    { nombre: partFullTitle(part), url: urlParte },
     { nombre, url },
   ]),
 ];
@@ -68,7 +68,7 @@ const jsonLd = [
 
 <Base titulo={tituloDePagina(nombre)} descripcion={descripcion} tipo="article" jsonLd={jsonLd}>
   <a href={`/partes/${concept.partSlug}`} class="text-sm text-accent-strong hover:underline">
-    {`${partLabel(part)}: ${part.title}`}
+    {partFullTitle(part)}
   </a>
 
   <div class="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-4">

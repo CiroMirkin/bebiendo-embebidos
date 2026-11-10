@@ -43,7 +43,7 @@ const sitio = {
           <div class="flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-4">
             <div>
               <h2 class="text-lg font-semibold tracking-tight text-ink group-hover:text-accent-strong">
-                <span class="mr-1.5 font-mono text-sm font-medium text-muted">{partLabel(part)}</span>{part.title}
+                {part.title.startsWith(partLabel(part)) ? part.title : <><span aria-hidden="true" class="mr-1.5 font-mono text-sm font-medium text-muted">{partLabel(part)}</span>{part.title}</>}
               </h2>
               <p class="mt-1 text-sm leading-relaxed text-muted">{part.description}</p>
             </div>
