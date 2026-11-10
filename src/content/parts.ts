@@ -31,9 +31,9 @@ export const parts: Part[] = [
     number: 0.5,
     label: 'Electrónica',
     title: 'Electrónica para firmware',
-    level: 'PROFUNDIZAR, cuando armes hardware propio',
+    level: 'ESTUDIAR la intro si no sabés electrónica; el resto, PROFUNDIZAR cuando armes hardware propio',
     description:
-      'Electrónica para firmware: transistores como interruptores, llaves de alimentación, fuente y fusibles, USB host en el ESP32-S3, tester, ngspice y banco.',
+      'Electrónica para firmware, sin saber nada de electrónica: intro desde cero, transistores como interruptores, llaves de alimentación, fuente, USB host, tester y banco.',
     sources: [
       { label: 'Hoja de datos del BC547 (onsemi)', url: 'https://www.onsemi.com/download/data-sheet/pdf/bc550-d.pdf' },
       {
