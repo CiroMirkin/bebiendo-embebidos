@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Llave del sensor de suelo del nodo</title>
+  <!-- Fuente de public/images/diagramas/e-2-llave-sensor-nodo.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/e-2-llave-sensor-nodo.html public/images/diagramas/e-2-llave-sensor-nodo.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 560px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 380" role="img" aria-labelledby="de-2-llave-sensor-nodo-title de-2-llave-sensor-nodo-desc">
+  <title id="de-2-llave-sensor-nodo-title">Llave del sensor de suelo del nodo</title>
+  <desc id="de-2-llave-sensor-nodo-desc">Un AO3401 con el source en 3,3 V corta el positivo del sensor de suelo. Un pull-up de 100 kΩ deja el gate en 3,3 V, 10 kΩ lo unen al GPIO 25 y 47 nF van entre gate y drain. Con el GPIO en bajo el gate baja a 0,3 V y el sensor se prende; en alto o flotando queda cortado.</desc>
+  <defs>
+    <marker id="de-2-llave-sensor-nodo-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="de-2-llave-sensor-nodo-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="580" height="380" fill="#fffcf0"/>
+  <text x="60" y="48" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">3,3 V del regulador</text>
+  <path d="M60 60 H244" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M220 136 V164" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <path d="M227 134 V141" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <path d="M227 146 V154" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <path d="M227 159 V166" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <path d="M227 137 H244 V123" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M227 163 H244 V177" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M227 150 H244 V137" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <polygon points="236,146.5 236,153.5 243,150" fill="#100f0f"/>
+  <path d="M244 60 V123" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="244" cy="60" r="3.5" fill="#100f0f"/>
+  <circle cx="170" cy="60" r="3.5" fill="#100f0f"/>
+  <path d="M170 60 V84" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="164" y="84" width="12" height="32" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M170 116 V190" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="170" cy="150" r="3.5" fill="#100f0f"/>
+  <text x="184" y="98" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">R1</text>
+  <text x="184" y="112" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">100 kΩ</text>
+  <path d="M170 150 H220" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M170 150 H140" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="108" y="144" width="32" height="12" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M108 150 H96" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="6" y="126" width="90" height="48" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="51.0" y="147.0" font-family="ui-monospace, monospace" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">GPIO 25</text>
+  <text x="51.0" y="165.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">bajo prende</text>
+  <text x="124" y="132" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">R2</text>
+  <text x="124" y="172" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">10 kΩ</text>
+  <path d="M160 190 H180" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M160 198 H180" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M170 198 V230 H244" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="158" y="192" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="end">C1</text>
+  <text x="158" y="208" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">47 nF</text>
+  <path d="M244 177 V262" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="244" cy="230" r="3.5" fill="#100f0f"/>
+  <rect x="194" y="262" width="100" height="48" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="244.0" y="283.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">sensor</text>
+  <text x="244.0" y="301.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">de suelo, 5 mA</text>
+  <path d="M244 310 V330" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M232 330 H256" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M236 335 H252" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M240 340 H248" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="244" y="360" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">GND</text>
+  <text x="272" y="138" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">Q1</text>
+  <text x="272" y="154" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">AO3401</text>
+  <rect x="340" y="40" width="224" height="76" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="356" y="66" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">GPIO 25 en bajo</text>
+  <text x="548" y="66" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#bc5215" text-anchor="end">conduce</text>
+  <text x="356" y="88" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">el gate queda en 0,3 V:</text>
+  <text x="356" y="104" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">VGS ≈ -3 V, el sensor se prende</text>
+  <rect x="340" y="136" width="224" height="76" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="356" y="162" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">alto o flotando</text>
+  <text x="548" y="162" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#205ea6" text-anchor="end">cortado</text>
+  <text x="356" y="184" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">el pull-up deja el gate en 3,3 V:</text>
+  <text x="356" y="200" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">VGS = 0, el sensor queda apagado</text>
+</svg>
+</div>
+</main>
+</body>
+</html>
