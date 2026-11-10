@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La resistencia de base paso a paso</title>
+  <!-- Fuente de public/images/diagramas/e-1-npn-resistencia-base.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/e-1-npn-resistencia-base.html public/images/diagramas/e-1-npn-resistencia-base.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 560px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 386" role="img" aria-labelledby="e-1-npn-resistencia-base-title e-1-npn-resistencia-base-desc">
+  <title id="e-1-npn-resistencia-base-title">La resistencia de base paso a paso</title>
+  <desc id="e-1-npn-resistencia-base-desc">Cinco pasos para calcular la resistencia de base del BC547 del buzzer: corriente de colector de 30 mA, corriente de base de al menos 3 mA, 2,6 V sobre la resistencia, 870 Ω calculados y 680 Ω comerciales, con los que la corriente de base es de unos 3,8 mA.</desc>
+  <rect x="0" y="0" width="540" height="386" fill="#fffcf0"/>
+<rect x="16" y="16" width="508" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/><circle cx="46" cy="44" r="14" fill="#100f0f"/><text x="46" y="49" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#fffcf0" text-anchor="middle">1</text><text x="74" y="38" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="start">corriente del colector</text><text x="74" y="59" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#100f0f" text-anchor="start">I_C = 30 mA</text><text x="508" y="38" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">la que pide el buzzer</text><path d="M270 72 V80" fill="none" stroke="#6f6e69" stroke-width="2"/><polygon points="270,90 265.5,80 274.5,80" fill="#6f6e69"/><rect x="16" y="90" width="508" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/><circle cx="46" cy="118" r="14" fill="#100f0f"/><text x="46" y="123" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#fffcf0" text-anchor="middle">2</text><text x="74" y="112" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="start">corriente mínima de base</text><text x="74" y="133" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#100f0f" text-anchor="start">I_B ≥ 30 mA / 10 = 3 mA</text><text x="508" y="112" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">regla del décimo</text><path d="M270 146 V154" fill="none" stroke="#6f6e69" stroke-width="2"/><polygon points="270,164 265.5,154 274.5,154" fill="#6f6e69"/><rect x="16" y="164" width="508" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/><circle cx="46" cy="192" r="14" fill="#100f0f"/><text x="46" y="197" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#fffcf0" text-anchor="middle">3</text><text x="74" y="186" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="start">tensión sobre la resistencia</text><text x="74" y="207" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#100f0f" text-anchor="start">3,3 V − 0,7 V = 2,6 V</text><text x="508" y="186" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">GPIO menos base-emisor</text><path d="M270 220 V228" fill="none" stroke="#6f6e69" stroke-width="2"/><polygon points="270,238 265.5,228 274.5,228" fill="#6f6e69"/><rect x="16" y="238" width="508" height="56" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/><circle cx="46" cy="266" r="14" fill="#100f0f"/><text x="46" y="271" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#fffcf0" text-anchor="middle">4</text><text x="74" y="260" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="start">valor calculado</text><text x="74" y="281" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#100f0f" text-anchor="start">R = 2,6 V / 3 mA ≈ 870 Ω</text><text x="508" y="260" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">justo llegan los 3 mA</text><path d="M270 294 V302" fill="none" stroke="#6f6e69" stroke-width="2"/><polygon points="270,312 265.5,302 274.5,302" fill="#6f6e69"/><rect x="16" y="312" width="508" height="56" rx="6" fill="#ffffff" stroke="#bc5215" stroke-width="1.5"/><circle cx="46" cy="340" r="14" fill="#bc5215"/><text x="46" y="345" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#fffcf0" text-anchor="middle">5</text><text x="74" y="334" font-family="system-ui, sans-serif" font-size="12" font-weight="400" fill="#6f6e69" text-anchor="start">valor comercial de abajo</text><text x="74" y="355" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#100f0f" text-anchor="start">680 Ω → I_B = 2,6 V / 680 Ω ≈ 3,8 mA</text><text x="508" y="334" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="end">sobra corriente: satura</text>
+</svg>
+</div>
+</main>
+</body>
+</html>
