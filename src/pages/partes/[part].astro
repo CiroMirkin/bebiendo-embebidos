@@ -3,7 +3,7 @@ import InlineMd from '../../components/InlineMd.astro';
 import LevelBadge from '../../components/LevelBadge.astro';
 import Base from '../../layouts/Base.astro';
 import { getConceptsByPart } from '../../content/concepts';
-import { getAllPartSlugs, getPartBySlug, partLabel, type Part } from '../../content/parts';
+import { getAllPartSlugs, getPartBySlug, partFullTitle, partLabel, type Part } from '../../content/parts';
 import { resumir } from '../../lib/markdown';
 import { migas, tituloDePagina, urlDePagina } from '../../lib/seo';
 
@@ -12,7 +12,7 @@ export const getStaticPaths = () =>
 
 const part = getPartBySlug(Astro.params.part) as Part;
 const concepts = await getConceptsByPart(part.slug);
-const titulo = `${partLabel(part)}: ${part.title}`;
+const titulo = partFullTitle(part);
 const jsonLd = [
   migas([
     { nombre: 'Inicio', url: new URL('/', Astro.site) },
@@ -27,7 +27,7 @@ const jsonLd = [
   <div class="mt-4 flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-4">
     <div>
       <h1 class="text-3xl font-semibold leading-tight tracking-tight text-ink">
-        <span class="mr-2 font-mono text-xl font-medium text-muted">{partLabel(part)}</span>{part.title}
+        {part.title.startsWith(partLabel(part)) ? part.title : <><span aria-hidden="true" class="mr-2 font-mono text-xl font-medium text-muted">{partLabel(part)}</span>{part.title}</>}
       </h1>
     </div>
     <LevelBadge level={part.level} />
