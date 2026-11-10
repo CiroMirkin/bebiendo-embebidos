@@ -69,6 +69,9 @@ Los ejemplos de "Mal:" que usan un pin incorrecto a propósito (strapping, ADC2,
 
 ## Electrónica (parte E)
 
+- **Enfoque de las lecciones**: la audiencia es alguien que sabe programar y tiene un ESP32 o un Arduino, pero no sabe nada de electrónica. Cada concepto se ata a algo que el lector ya hace con su placa (prender un LED, leer un botón). Nada se da por sabido si no está en la E.0 o en una lección anterior. Cada circuito va con un diagrama, y los que cambian de estado (transistores, llaves, arranques) van paso a paso. Los diagramas siguen el flujo y el estilo de los de la parte 0: HTML fuente en `docs/diagramas/` y SVG en `public/images/diagramas/`.
+- **LED del nodo (E.0)**: LED rojo en el GPIO 2, con una resistencia de 330 Ω en serie. Cae unos 2 V, la resistencia se queda con 1,3 V y la corriente es de unos 3,9 mA. Con 5 V (Arduino UNO) la misma resistencia da unos 9 mA.
+- **Botón del nodo (E.0)**: entre el GPIO 27 y GND, con `INPUT_PULLUP`.
 - **Fuente del controlador**: 12 V y 5 A, fusible lento de 4 A, Schottky en serie, 470 µF y 100 nF en la entrada, step-down de 12 V a 5 V para la placa y 100 µF a su salida. Las luces de cultivo tienen su propia fuente.
 - **Consumos a 12 V**: bomba 1,2 A (hasta unos 5 A al arrancar), ventilador 0,3 A, motor de la cortina 0,8 A (hasta unos 3 A al arrancar). Placa, pantalla, relés y sensores: 0,25 A a 5 V.
 - **Buzzer de alarma**: 12 V y 30 mA, con un BC547 del lado bajo en el GPIO 2 del controlador (R de base 680 Ω, 47 kΩ de base a masa).

@@ -8,6 +8,8 @@ Generado por `tools/verificar-ejemplos.py`. Cada fila es un ejemplo que compiló
 | 0-14 | 2 | tablero.ino | nodo | 2026-11-04 | aaac989 |
 | 0-14 | 3 | controlador-can.ino | controlador | 2026-11-04 | aaac989 |
 | 0-14 | 7 | can-problemas.ino | controlador | 2026-11-04 | aaac989 |
+| e-0 | 0 | nodo-led.ino | nodo | 2026-11-09 | 3713073+cambios |
+| e-0 | 1 | nodo-led-boton.ino | nodo | 2026-11-09 | 3713073+cambios |
 | e-1 | 0 | alarma-buzzer.ino | controlador | 2026-11-09 | 4e4e874 |
 | e-1 | 1 | nodo-llave-basica.ino | nodo | 2026-11-09 | 4e4e874 |
 | e-2 | 0 | nodo-sensor-con-llave.ino | nodo | 2026-11-09 | 4e4e874 |

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" role="img" aria-labelledby="de-0-circuito-led-title de-0-circuito-led-desc" id="e-0-circuito-led-root">
+  <title id="de-0-circuito-led-title">LED con resistencia en el GPIO 2</title>
+  <desc id="de-0-circuito-led-desc">Camino cerrado: el GPIO 2 en alto da 3,3 V, la corriente pasa por una resistencia de 330 Ω, que se queda con 1,3 V, luego por el LED rojo, que se queda con 2 V, y vuelve por GND. La corriente es la misma en todo el camino: 1,3 V sobre 330 Ω da unos 3,9 mA.</desc>
+  <defs>
+      <style>#e-0-circuito-led-root { font-family: system-ui, sans-serif; color: #100f0f; }
+      #e-0-circuito-led-root .diagram-container { width: 100%; overflow-x: auto; }</style>
+  </defs>
+  <rect x="0" y="0" width="600" height="300" fill="#fffcf0"/>
+<rect x="40" y="28" width="130" height="224" rx="6" fill="none" stroke="#6f6e69" stroke-width="1" stroke-dasharray="5,4"/>
+<text x="52" y="48" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#6f6e69" text-anchor="start">ESP32</text>
+<text x="162" y="84" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">GPIO 2</text>
+<text x="162" y="224" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="end">GND</text>
+<circle cx="170" cy="64" r="3.5" fill="#100f0f"/>
+<circle cx="170" cy="236" r="3.5" fill="#100f0f"/>
+<path d="M170 64 H230 M278 64 H380 M410 64 H520 V236 H170" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+<rect x="230" y="57" width="48" height="14" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+<path d="M380 48 V80 L410 64 Z" fill="#ffffff" stroke="#100f0f" stroke-width="1.5"/>
+<path d="M410 48 V80" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+<path d="M424 50 L434 40" fill="none" stroke="#bc5215" stroke-width="1.5"/><path d="M434.0 40.0 L431.4 47.6 L426.4 42.6 Z" fill="#bc5215"/>
+<path d="M432 58 L442 48" fill="none" stroke="#bc5215" stroke-width="1.5"/><path d="M442.0 48.0 L439.4 55.6 L434.4 50.6 Z" fill="#bc5215"/>
+<text x="190" y="56" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">3,3 V</text>
+<text x="190" y="228" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">0 V</text>
+<text x="254" y="92" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">R1</text>
+<text x="254" y="108" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">330 Ω</text>
+<text x="254" y="124" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#bc5215" text-anchor="middle">cae 1,3 V</text>
+<text x="395" y="98" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#100f0f" text-anchor="middle">LED rojo</text>
+<text x="395" y="114" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#bc5215" text-anchor="middle">cae 2 V</text>
+<path d="M322 44 L358 44" fill="none" stroke="#bc5215" stroke-width="2"/><path d="M358.0 44.0 L350.8 47.5 L350.8 40.5 Z" fill="#bc5215"/>
+<path d="M544 120 L544 170" fill="none" stroke="#bc5215" stroke-width="2"/><path d="M544.0 170.0 L540.5 162.8 L547.5 162.8 Z" fill="#bc5215"/>
+<path d="M358 256 L322 256" fill="none" stroke="#bc5215" stroke-width="2"/><path d="M322.0 256.0 L329.2 252.5 L329.2 259.5 Z" fill="#bc5215"/>
+<text x="340" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#bc5215" text-anchor="middle">la corriente es la misma en todo el camino</text>
+<text x="340" y="282" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#bc5215" text-anchor="middle">I = 1,3 V ÷ 330 Ω ≈ 3,9 mA</text>
+</svg>
