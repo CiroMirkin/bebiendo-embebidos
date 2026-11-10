@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 370" role="img" aria-labelledby="de-2-llave-5v-title de-2-llave-5v-desc" id="e-2-llave-5v-root">
+  <title id="de-2-llave-5v-title">Llave de 5 V con P-MOSFET y NPN</title>
+  <desc id="de-2-llave-5v-desc">Un AO3401 corta los 5 V después de un fusible de 0,25 A, con un pull-up de 10 kΩ en el gate. Un BC547 lleva el gate a masa: su base recibe el GPIO por 4,7 kΩ y tiene 47 kΩ a masa. La salida lleva 100 µF a masa. Con el GPIO en alto la carga se prende; en bajo o flotando queda apagada.</desc>
+  <defs>
+      <style>#e-2-llave-5v-root { font-family: system-ui, sans-serif; color: #100f0f; }
+      #e-2-llave-5v-root .diagram-container { width: 100%; overflow-x: auto; }</style>
+    <marker id="e-2-llave-5v-de-2-llave-5v-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="e-2-llave-5v-de-2-llave-5v-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="370" fill="#fffcf0"/>
+  <text x="50" y="48" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">5 V</text>
+  <path d="M50 60 H314" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="96" y="54" width="44" height="12" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="118" y="40" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">F1</text>
+  <text x="118" y="86" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">0,25 A</text>
+  <path d="M290 136 V164" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <path d="M297 134 V141" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <path d="M297 146 V154" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <path d="M297 159 V166" fill="none" stroke="#100f0f" stroke-width="2"/>
+  <path d="M297 137 H314 V123" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M297 163 H314 V177" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M297 150 H314 V137" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <polygon points="306,146.5 306,153.5 313,150" fill="#100f0f"/>
+  <path d="M314 60 V123" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="250" cy="60" r="3.5" fill="#100f0f"/>
+  <path d="M250 60 V84" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="244" y="84" width="12" height="32" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M250 116 V232" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="250" cy="150" r="3.5" fill="#100f0f"/>
+  <path d="M250 150 H290" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="262" y="98" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">R1</text>
+  <text x="262" y="112" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">10 kΩ</text>
+  <text x="344" y="138" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">Q1</text>
+  <text x="344" y="154" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">AO3401</text>
+  <circle cx="241" cy="250" r="22" fill="none" stroke="#6f6e69" stroke-width="1"/>
+  <path d="M232 236 V264" fill="none" stroke="#100f0f" stroke-width="2.5"/>
+  <path d="M232 244 L250 232" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M232 256 L250 268" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <polygon points="250.0,268.0 241.4,266.5 245.3,260.7" fill="#100f0f"/>
+  <path d="M250 268 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M238 320 H262" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M242 325 H258" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M246 330 H254" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="250" y="350" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">GND</text>
+  <path d="M232 250 H140" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="180" cy="250" r="3.5" fill="#100f0f"/>
+  <rect x="108" y="244" width="32" height="12" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M108 250 H84" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="10" y="226" width="74" height="48" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="47.0" y="255.0" font-family="ui-monospace, monospace" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">GPIO</text>
+  <text x="124" y="236" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">R2</text>
+  <text x="124" y="276" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">4,7 kΩ</text>
+  <path d="M180 250 V270" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="174" y="270" width="12" height="32" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M180 302 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M168 320 H192" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M172 325 H188" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M176 330 H184" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="192" y="284" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">R3</text>
+  <text x="192" y="300" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">47 kΩ</text>
+  <text x="278" y="262" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">Q2</text>
+  <text x="278" y="278" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">BC547</text>
+  <path d="M314 177 V240" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="314" cy="200" r="3.5" fill="#100f0f"/>
+  <path d="M314 200 H380" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="380" cy="200" r="3.5" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="380" y="222" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">VBUS</text>
+  <text x="380" y="236" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">de la carga</text>
+  <path d="M304 240 H324" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M304 249 Q314 245 324 249" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="326" y="238" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="start">+</text>
+  <path d="M314 249 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M302 320 H326" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M306 325 H322" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M310 330 H318" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="330" y="266" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="start">C1</text>
+  <text x="330" y="282" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">100 µF</text>
+  <text x="46" y="218" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">alto = prendido</text>
+  <rect x="420" y="24" width="204" height="76" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="436" y="50" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">GPIO en alto</text>
+  <text x="608" y="50" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#bc5215" text-anchor="end">prendido</text>
+  <text x="436" y="72" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">el NPN lleva el gate a masa:</text>
+  <text x="436" y="88" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">VGS = -5 V, la carga recibe 5 V</text>
+  <rect x="420" y="112" width="204" height="76" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="436" y="138" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#100f0f" text-anchor="start">bajo o flotando</text>
+  <text x="608" y="138" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#205ea6" text-anchor="end">apagado</text>
+  <text x="436" y="160" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">R3 deja la base en 0 V, no conduce:</text>
+  <text x="436" y="176" font-family="system-ui, sans-serif" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">el gate queda en 5 V, VGS = 0</text>
+</svg>

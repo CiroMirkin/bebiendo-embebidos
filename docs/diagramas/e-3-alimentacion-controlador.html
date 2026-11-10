@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alimentación del controlador</title>
+  <!-- Fuente de public/images/diagramas/e-3-alimentacion-controlador.svg. Para regenerarlo:
+       python3 ~/.claude/skills/diagram-design/scripts/export_svg.py docs/diagramas/e-3-alimentacion-controlador.html public/images/diagramas/e-3-alimentacion-controlador.svg --system-fonts -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #fffcf0; color: #100f0f; padding: 3rem 1rem; display: flex; justify-content: center; }
+    .frame { max-width: 720px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { min-width: 560px; width: 100%; height: auto; display: block; }
+  </style>
+</head>
+<body>
+<main class="frame">
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 380" role="img" aria-labelledby="de-3-alimentacion-controlador-title de-3-alimentacion-controlador-desc">
+  <title id="de-3-alimentacion-controlador-title">Alimentación del controlador</title>
+  <desc id="de-3-alimentacion-controlador-desc">La fuente de 12 V y 5 A entra por un fusible lento de 4 A y un diodo Schottky. Después van un electrolítico de 470 µF y un cerámico de 100 nF a masa, las cargas de 12 V (bomba, ventilador y cortina) y un step-down de 12 V a 5 V con 100 µF a la salida, que alimenta al ESP32-S3. En naranja, el camino de la corriente de la bomba: sale por el +12 V y vuelve a la fuente por la masa.</desc>
+  <defs>
+    <marker id="de-3-alimentacion-controlador-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6f6e69"/></marker>
+    <marker id="de-3-alimentacion-controlador-arrow-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#bc5215"/></marker>
+  </defs>
+  <rect x="0" y="0" width="830" height="380" fill="#fffcf0"/>
+  <rect x="16" y="120" width="80" height="220" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="56" y="214" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">fuente</text>
+  <text x="56" y="232" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">12 V</text>
+  <text x="56" y="248" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">5 A</text>
+  <text x="84" y="146" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#100f0f" text-anchor="end">+</text>
+  <text x="84" y="326" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#100f0f" text-anchor="end">-</text>
+  <path d="M96 140 H520" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M96 320 H765" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <rect x="130" y="134" width="40" height="12" rx="1" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="150" y="118" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">F1</text>
+  <text x="150" y="164" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">4 A lento</text>
+  <polygon points="226,130 226,150 246,140" fill="#fffcf0" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M246 130 V150" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="236" y="118" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#100f0f" text-anchor="middle">D1</text>
+  <text x="236" y="164" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">Schottky</text>
+  <text x="236" y="178" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">3 A o más</text>
+  <circle cx="290" cy="140" r="3.5" fill="#100f0f"/>
+  <path d="M290 140 V206" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M280 206 H300" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M280 215 Q290 211 300 215" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="302" y="204" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="start">+</text>
+  <path d="M290 215 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="290" cy="320" r="3.5" fill="#100f0f"/>
+  <text x="304" y="222" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">470 µF</text>
+  <circle cx="356" cy="140" r="3.5" fill="#100f0f"/>
+  <path d="M356 140 V206" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M346 206 H366" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M346 214 H366" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M356 215 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="356" cy="320" r="3.5" fill="#100f0f"/>
+  <text x="370" y="222" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">100 nF</text>
+  <circle cx="470" cy="140" r="3.5" fill="#100f0f"/>
+  <rect x="430" y="200" width="80" height="64" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="470.0" y="229.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">bomba</text>
+  <text x="470.0" y="247.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">1,2 A</text>
+  <text x="482" y="284" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">y ventilador,</text>
+  <text x="482" y="298" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">cortina</text>
+  <path d="M470 140 V200" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M470 264 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="470" cy="320" r="3.5" fill="#100f0f"/>
+  <rect x="520" y="116" width="100" height="48" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="570.0" y="137.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">step-down</text>
+  <text x="570.0" y="155.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">12 V a 5 V</text>
+  <path d="M570 164 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="570" cy="320" r="3.5" fill="#100f0f"/>
+  <path d="M620 140 H720" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="670" cy="140" r="3.5" fill="#100f0f"/>
+  <path d="M670 140 V206" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M660 206 H680" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M660 215 Q670 211 680 215" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="682" y="204" font-family="ui-monospace, monospace" font-size="11" font-weight="600" fill="#100f0f" text-anchor="start">+</text>
+  <path d="M670 215 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="670" cy="320" r="3.5" fill="#100f0f"/>
+  <text x="684" y="222" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="start">100 µF</text>
+  <rect x="720" y="116" width="90" height="48" rx="6" fill="#ffffff" stroke="#100f0f" stroke-width="1"/>
+  <text x="765.0" y="137.0" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#100f0f" text-anchor="middle">ESP32-S3</text>
+  <text x="765.0" y="155.0" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">5 V</text>
+  <path d="M765 164 V320" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <circle cx="765" cy="320" r="3.5" fill="#100f0f"/>
+  <circle cx="130" cy="320" r="3.5" fill="#100f0f"/>
+  <path d="M130 320 V338" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M118 338 H142" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M122 343 H138" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <path d="M126 348 H134" fill="none" stroke="#100f0f" stroke-width="1.5"/>
+  <text x="130" y="368" font-family="ui-monospace, monospace" font-size="11" font-weight="400" fill="#6f6e69" text-anchor="middle">GND</text>
+  <path d="M96 140 H470 V200" fill="none" stroke="#bc5215" stroke-width="2.5"/>
+  <path d="M470 264 V320 H96" fill="none" stroke="#bc5215" stroke-width="2.5"/>
+  <polygon points="326,140 316,135.5 316,144.5" fill="#bc5215"/>
+  <polygon points="470,182 465.5,172 474.5,172" fill="#bc5215"/>
+  <polygon points="470,302 465.5,292 474.5,292" fill="#bc5215"/>
+  <polygon points="374,320 384,315.5 384,324.5" fill="#bc5215"/>
+  <polygon points="194,320 204,315.5 204,324.5" fill="#bc5215"/>
+  <text x="320" y="92" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#bc5215" text-anchor="middle">1,2 A: sale de la fuente por el +12 V</text>
+  <text x="420" y="358" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#bc5215" text-anchor="middle">y vuelve a la fuente por la masa</text>
+</svg>
+</div>
+</main>
+</body>
+</html>
